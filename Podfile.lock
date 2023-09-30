@@ -1,0 +1,20 @@
+PODS:
+  - DropDown (2.3.13)
+  - Toaster (2.3.0)
+
+DEPENDENCIES:
+  - DropDown
+  - Toaster
+
+SPEC REPOS:
+  trunk:
+    - DropDown
+    - Toaster
+
+SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
+
+PODFILE CHECKSUM: a29366031826a0149f49fc596511527f6638674b
+
+COCOAPODS: 1.13.0
