@@ -17,6 +17,10 @@
 		4E5474252AC8825700BB0BD6 /* ProyectoComandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474242AC8825700BB0BD6 /* ProyectoComandaTests.swift */; };
 		4E54742F2AC8825800BB0BD6 /* ProyectoComandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54742E2AC8825800BB0BD6 /* ProyectoComandaUITests.swift */; };
 		4E5474312AC8825800BB0BD6 /* ProyectoComandaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474302AC8825800BB0BD6 /* ProyectoComandaUITestsLaunchTests.swift */; };
+		4E54743F2AC88C5900BB0BD6 /* EstablecimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54743E2AC88C5900BB0BD6 /* EstablecimientoViewController.swift */; };
+		4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */; };
+		4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */; };
+		4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +57,10 @@
 		4E54742A2AC8825800BB0BD6 /* ProyectoComandaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProyectoComandaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E54742E2AC8825800BB0BD6 /* ProyectoComandaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoComandaUITests.swift; sourceTree = "<group>"; };
 		4E5474302AC8825800BB0BD6 /* ProyectoComandaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoComandaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4E54743E2AC88C5900BB0BD6 /* EstablecimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablecimientoViewController.swift; sourceTree = "<group>"; };
+		4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoListadoViewController.swift; sourceTree = "<group>"; };
+		4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoAgregarViewController.swift; sourceTree = "<group>"; };
+		4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoActualizarViewController.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8791B1E27FA802326D7D149 /* Pods-ProyectoComanda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda/Pods-ProyectoComanda.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +109,6 @@
 				8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */,
 				FC3762EFD0895944AC4AD956 /* Pods-ProyectoComandaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,9 +137,9 @@
 		4E54740C2AC8825400BB0BD6 /* ProyectoComanda */ = {
 			isa = PBXGroup;
 			children = (
+				4E54743D2AC887CB00BB0BD6 /* ViewControllers */,
 				4E54740D2AC8825400BB0BD6 /* AppDelegate.swift */,
 				4E54740F2AC8825400BB0BD6 /* SceneDelegate.swift */,
-				4E5474112AC8825400BB0BD6 /* ViewController.swift */,
 				4E5474132AC8825400BB0BD6 /* Main.storyboard */,
 				4E5474162AC8825700BB0BD6 /* Assets.xcassets */,
 				4E5474182AC8825700BB0BD6 /* LaunchScreen.storyboard */,
@@ -156,6 +163,18 @@
 				4E5474302AC8825800BB0BD6 /* ProyectoComandaUITestsLaunchTests.swift */,
 			);
 			path = ProyectoComandaUITests;
+			sourceTree = "<group>";
+		};
+		4E54743D2AC887CB00BB0BD6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E5474112AC8825400BB0BD6 /* ViewController.swift */,
+				4E54743E2AC88C5900BB0BD6 /* EstablecimientoViewController.swift */,
+				4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */,
+				4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */,
+				4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B578500B25CAEB5D5DDBBDA8 /* Frameworks */ = {
@@ -408,7 +427,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5474122AC8825400BB0BD6 /* ViewController.swift in Sources */,
+				4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */,
+				4E54743F2AC88C5900BB0BD6 /* EstablecimientoViewController.swift in Sources */,
+				4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */,
 				4E54740E2AC8825400BB0BD6 /* AppDelegate.swift in Sources */,
+				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
 				4E5474102AC8825400BB0BD6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
