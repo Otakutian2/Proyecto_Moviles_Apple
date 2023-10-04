@@ -23,6 +23,8 @@
 		4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
+		9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */; };
+		9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoActualizarViewController.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
+		9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		A8791B1E27FA802326D7D149 /* Pods-ProyectoComanda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda/Pods-ProyectoComanda.release.xcconfig"; sourceTree = "<group>"; };
 		B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda_ProyectoComandaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AB82E397EE04E0119EED18 /* Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda-ProyectoComandaUITests/Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */,
 				4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */,
 				4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */,
+				9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */,
+				9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -427,10 +433,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5474122AC8825400BB0BD6 /* ViewController.swift in Sources */,
+				9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */,
 				4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */,
 				4E54743F2AC88C5900BB0BD6 /* EstablecimientoViewController.swift in Sources */,
 				4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */,
 				4E54740E2AC8825400BB0BD6 /* AppDelegate.swift in Sources */,
+				9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */,
 				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
 				4E5474102AC8825400BB0BD6 /* SceneDelegate.swift in Sources */,
 			);
