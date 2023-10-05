@@ -25,6 +25,8 @@
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
 		9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */; };
 		9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */; };
+		DC596E7E2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC596E7D2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift */; };
+		DC596E802ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC596E7F2ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		A8791B1E27FA802326D7D149 /* Pods-ProyectoComanda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda/Pods-ProyectoComanda.release.xcconfig"; sourceTree = "<group>"; };
 		B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda_ProyectoComandaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AB82E397EE04E0119EED18 /* Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda-ProyectoComandaUITests/Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC596E7D2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoMantenimientoViewController.swift; sourceTree = "<group>"; };
+		DC596E7F2ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoDetalleViewControler.swift; sourceTree = "<group>"; };
 		E7581649477592DD76292F06 /* Pods-ProyectoComanda-ProyectoComandaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda-ProyectoComandaUITests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda-ProyectoComandaUITests/Pods-ProyectoComanda-ProyectoComandaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EDEECE87FCF3B9FA4BFFDCEE /* Pods-ProyectoComanda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda/Pods-ProyectoComanda.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3762EFD0895944AC4AD956 /* Pods-ProyectoComandaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */,
 				9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */,
 				9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */,
+				DC596E7D2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift */,
+				DC596E7F2ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -436,10 +442,12 @@
 				9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */,
 				4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */,
 				4E54743F2AC88C5900BB0BD6 /* EstablecimientoViewController.swift in Sources */,
+				DC596E7E2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift in Sources */,
 				4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */,
 				4E54740E2AC8825400BB0BD6 /* AppDelegate.swift in Sources */,
 				9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */,
 				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
+				DC596E802ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift in Sources */,
 				4E5474102AC8825400BB0BD6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
