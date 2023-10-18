@@ -33,6 +33,9 @@
 		E26EEB2E2ACF8743003A69F0 /* MesaListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26EEB2D2ACF8742003A69F0 /* MesaListadoViewController.swift */; };
 		E26EEB302ACF876A003A69F0 /* MesaAgregarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26EEB2F2ACF876A003A69F0 /* MesaAgregarViewController.swift */; };
 		E26EEB322ACF8824003A69F0 /* MesaActualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26EEB312ACF8824003A69F0 /* MesaActualizarViewController.swift */; };
+		E29133702AE04EDB009E84B9 /* PlatoActualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E291336F2AE04EDB009E84B9 /* PlatoActualizarViewController.swift */; };
+		E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29133712AE04F13009E84B9 /* PlatoListadoViewController.swift */; };
+		E29133742AE04F2F009E84B9 /* PlatoAgregarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29133732AE04F2F009E84B9 /* PlatoAgregarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		E26EEB2D2ACF8742003A69F0 /* MesaListadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaListadoViewController.swift; sourceTree = "<group>"; };
 		E26EEB2F2ACF876A003A69F0 /* MesaAgregarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaAgregarViewController.swift; sourceTree = "<group>"; };
 		E26EEB312ACF8824003A69F0 /* MesaActualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaActualizarViewController.swift; sourceTree = "<group>"; };
+		E291336F2AE04EDB009E84B9 /* PlatoActualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoActualizarViewController.swift; sourceTree = "<group>"; };
+		E29133712AE04F13009E84B9 /* PlatoListadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoListadoViewController.swift; sourceTree = "<group>"; };
+		E29133732AE04F2F009E84B9 /* PlatoAgregarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoAgregarViewController.swift; sourceTree = "<group>"; };
 		E7581649477592DD76292F06 /* Pods-ProyectoComanda-ProyectoComandaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda-ProyectoComandaUITests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda-ProyectoComandaUITests/Pods-ProyectoComanda-ProyectoComandaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EDEECE87FCF3B9FA4BFFDCEE /* Pods-ProyectoComanda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda/Pods-ProyectoComanda.debug.xcconfig"; sourceTree = "<group>"; };
 		FC3762EFD0895944AC4AD956 /* Pods-ProyectoComandaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +209,9 @@
 				E20493F82ACFA0490085CAA7 /* CategoriaListadoViewController.swift */,
 				E20493FA2ACFA06B0085CAA7 /* CategoriaAgregarViewController.swift */,
 				E20493FC2ACFA0850085CAA7 /* CategoriaModificarViewController.swift */,
+				E291336F2AE04EDB009E84B9 /* PlatoActualizarViewController.swift */,
+				E29133712AE04F13009E84B9 /* PlatoListadoViewController.swift */,
+				E29133732AE04F2F009E84B9 /* PlatoAgregarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -465,9 +474,12 @@
 				E20493FD2ACFA0850085CAA7 /* CategoriaModificarViewController.swift in Sources */,
 				E20493FB2ACFA06B0085CAA7 /* CategoriaAgregarViewController.swift in Sources */,
 				E20493F92ACFA0490085CAA7 /* CategoriaListadoViewController.swift in Sources */,
+				E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */,
+				E29133702AE04EDB009E84B9 /* PlatoActualizarViewController.swift in Sources */,
 				DC596E7E2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift in Sources */,
 				4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */,
 				4E54740E2AC8825400BB0BD6 /* AppDelegate.swift in Sources */,
+				E29133742AE04F2F009E84B9 /* PlatoAgregarViewController.swift in Sources */,
 				E26EEB2E2ACF8743003A69F0 /* MesaListadoViewController.swift in Sources */,
 				9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */,
 				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
