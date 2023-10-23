@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AF3A8FA2144C35BA6D3BF6A /* Pods_ProyectoComanda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */; };
+		4E16DD042AE733F5004A505A /* MetodoPagoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16DD032AE733F5004A505A /* MetodoPagoTableViewCell.swift */; };
 		4E5465922AE06DAD00492ADC /* CajaReporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5465912AE06DAD00492ADC /* CajaReporteViewController.swift */; };
 		4E5465942AE06DDD00492ADC /* FacturarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5465932AE06DDD00492ADC /* FacturarViewController.swift */; };
 		4E54740E2AC8825400BB0BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54740D2AC8825400BB0BD6 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComandaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E16DD032AE733F5004A505A /* MetodoPagoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoTableViewCell.swift; sourceTree = "<group>"; };
 		4E5465912AE06DAD00492ADC /* CajaReporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CajaReporteViewController.swift; sourceTree = "<group>"; };
 		4E5465932AE06DDD00492ADC /* FacturarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacturarViewController.swift; sourceTree = "<group>"; };
 		4E54740A2AC8825400BB0BD6 /* ProyectoComanda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoComanda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4E16DD002AE733A8004A505A /* MetodoPago */ = {
+			isa = PBXGroup;
+			children = (
+				4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */,
+				4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */,
+				4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */,
+			);
+			path = MetodoPago;
+			sourceTree = "<group>";
+		};
+		4E16DD022AE733D9004A505A /* Celdas */ = {
+			isa = PBXGroup;
+			children = (
+				4E16DD032AE733F5004A505A /* MetodoPagoTableViewCell.swift */,
+			);
+			path = Celdas;
+			sourceTree = "<group>";
+		};
 		4E5474012AC8825400BB0BD6 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +187,7 @@
 		4E54740C2AC8825400BB0BD6 /* ProyectoComanda */ = {
 			isa = PBXGroup;
 			children = (
+				4E16DD022AE733D9004A505A /* Celdas */,
 				4E54743D2AC887CB00BB0BD6 /* ViewControllers */,
 				4E54740D2AC8825400BB0BD6 /* AppDelegate.swift */,
 				4E54740F2AC8825400BB0BD6 /* SceneDelegate.swift */,
@@ -198,11 +219,9 @@
 		4E54743D2AC887CB00BB0BD6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4E16DD002AE733A8004A505A /* MetodoPago */,
 				4E5474112AC8825400BB0BD6 /* ViewController.swift */,
 				4E54743E2AC88C5900BB0BD6 /* EstablecimientoViewController.swift */,
-				4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */,
-				4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */,
-				4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */,
 				9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */,
 				9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */,
 				DC596E7D2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift */,
@@ -482,6 +501,7 @@
 				E20493FD2ACFA0850085CAA7 /* CategoriaModificarViewController.swift in Sources */,
 				E20493FB2ACFA06B0085CAA7 /* CategoriaAgregarViewController.swift in Sources */,
 				E20493F92ACFA0490085CAA7 /* CategoriaListadoViewController.swift in Sources */,
+				4E16DD042AE733F5004A505A /* MetodoPagoTableViewCell.swift in Sources */,
 				E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */,
 				E29133702AE04EDB009E84B9 /* PlatoActualizarViewController.swift in Sources */,
 				DC596E7E2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift in Sources */,
