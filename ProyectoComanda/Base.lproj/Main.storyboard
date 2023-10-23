@@ -61,6 +61,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMN-ZJ-eLW"/>
+                                    <segue destination="BDf-xE-0YZ" kind="show" id="xIo-Co-XvX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,7 +76,7 @@
         <!--Principal View Controller-->
         <scene sceneID="3Fe-fB-zYV">
             <objects>
-                <viewController id="BDf-xE-0YZ" customClass="PrincipalViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BDf-xE-0YZ" customClass="PrincipalViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MEQ-2C-c7R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,6 +117,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="jf0-Xa-dwv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzW-Ca-Q3e">
                                 <rect key="frame" x="207" y="628" width="160" height="148"/>
@@ -131,6 +135,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="7AL-87-6fG" kind="show" id="kOn-Sa-6uz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP1-8h-hRR">
                                 <rect key="frame" x="64" y="78" width="286" height="218"/>
@@ -151,6 +158,7 @@
                         <viewLayoutGuide key="safeArea" id="J5v-Sp-JFS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9Vo-jv-Hwf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pU-xg-8oF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,7 +167,7 @@
         <!--Configuracion View Controller-->
         <scene sceneID="znd-NH-ki0">
             <objects>
-                <viewController id="6A4-dN-hbf" customClass="ConfiguracionViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="6A4-dN-hbf" customClass="ConfiguracionViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7rH-3O-0Mw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,6 +247,9 @@
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="fVw-LT-0pn" kind="show" id="SRN-Xk-Pki"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUt-eP-hHL">
                                 <rect key="frame" x="42" y="325" width="103" height="75"/>
@@ -254,6 +265,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="j4x-q5-5uk" kind="show" id="xC7-PO-IQu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-6n-BV1">
                                 <rect key="frame" x="42" y="475" width="103" height="75"/>
@@ -270,6 +284,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="iGz-hL-IG8" kind="show" id="0yh-Me-dvb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnt-GZ-hh0">
                                 <rect key="frame" x="241" y="188" width="101" height="75"/>
@@ -285,6 +302,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="D18-Ff-Tzt" kind="show" id="WuN-Pm-emc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIu-sV-knr">
                                 <rect key="frame" x="246" y="325" width="101" height="72"/>
@@ -300,6 +320,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="7rX-AG-qUQ" kind="show" id="n28-3P-euU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYR-uq-6Pr">
                                 <rect key="frame" x="246" y="475" width="101" height="72"/>
@@ -315,6 +338,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="ofI-Dp-UCo" kind="show" id="b9s-6C-neO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-MZ-RAm">
                                 <rect key="frame" x="157" y="642" width="101" height="75"/>
@@ -330,6 +356,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BDf-xE-0YZ" kind="show" id="H5F-7Q-3Zl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neh-Eq-XKG">
                                 <rect key="frame" x="178" y="725" width="58" height="21"/>
@@ -342,6 +371,7 @@
                         <viewLayoutGuide key="safeArea" id="ZCq-46-1gW"/>
                         <color key="backgroundColor" red="0.9794730544090271" green="0.97647064924240112" blue="0.93541675806045532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pFS-Ud-qQ9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpQ-7K-2hr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +380,7 @@
         <!--Establecimiento View Controller-->
         <scene sceneID="lY0-KB-Rtg">
             <objects>
-                <viewController storyboardIdentifier="EstablecimientoListado" id="iGz-hL-IG8" customClass="EstablecimientoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EstablecimientoListado" modalPresentationStyle="fullScreen" id="iGz-hL-IG8" customClass="EstablecimientoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R1s-Yu-qZv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,21 +440,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rm-ad-FcX">
-                                <rect key="frame" x="60" y="826" width="112" height="36"/>
+                                <rect key="frame" x="25" y="826" width="112" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Actualizar">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ft-uN-UR4">
-                                <rect key="frame" x="244" y="827" width="110" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Cancelar">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
-                                    <color key="baseBackgroundColor" red="0.57647058823529407" green="0.12156862745098039" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFN-el-3Kb">
@@ -489,10 +510,33 @@
                                     <backgroundConfiguration key="background" image="llamada-telefonica"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-2S-hdx">
+                                <rect key="frame" x="293" y="826" width="110" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Volver">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="volverListadoMetPago:" destination="OBx-Fz-h3B" eventType="touchUpInside" id="rSe-hK-gqQ"/>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="RGq-Kh-c3q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ft-uN-UR4">
+                                <rect key="frame" x="159" y="826" width="110" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cancelar">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="baseBackgroundColor" red="0.57647058823529407" green="0.12156862745098039" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ET1-ar-doq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eUd-bX-Xbb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dh-lM-vE9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -501,7 +545,7 @@
         <!--Metodos Pago Listado View Controller-->
         <scene sceneID="9F7-wa-3DH">
             <objects>
-                <viewController storyboardIdentifier="MetPagosListado" id="ofI-Dp-UCo" customClass="MetodosPagoListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MetPagosListado" modalPresentationStyle="fullScreen" id="ofI-Dp-UCo" customClass="MetodosPagoListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YI8-cv-bL1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,6 +577,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="10O-LG-Zrl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4C-am-z3T">
                                 <rect key="frame" x="60" y="826" width="112" height="36"/>
@@ -557,6 +604,7 @@
                         <viewLayoutGuide key="safeArea" id="uLG-So-xlP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aYR-0t-QcP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jM-g3-9jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,7 +613,7 @@
         <!--Metodos Pago Actualizar View Controller-->
         <scene sceneID="Ztd-Cz-J2H">
             <objects>
-                <viewController storyboardIdentifier="MetPagoActualizar" id="pkT-74-8gu" customClass="MetodosPagoActualizarViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MetPagoActualizar" modalPresentationStyle="fullScreen" id="pkT-74-8gu" customClass="MetodosPagoActualizarViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wt9-77-1MG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -619,6 +667,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="ofI-Dp-UCo" kind="show" id="bwe-0R-1sT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fma-er-tCr">
                                 <rect key="frame" x="0.0" y="256" width="423" height="3"/>
@@ -649,7 +700,7 @@
         <!--Empleado Mantenimiento View Controller-->
         <scene sceneID="FB4-Ep-tTP">
             <objects>
-                <viewController id="fVw-LT-0pn" customClass="EmpleadoMantenimientoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="fVw-LT-0pn" customClass="EmpleadoMantenimientoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3bg-6E-qdI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -706,7 +757,7 @@ CA
                                     <color key="baseBackgroundColor" red="0.3411764706" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Q34-DM-6Dj" kind="show" id="bXf-oo-qS9"/>
+                                    <segue destination="Q34-DM-6Dj" kind="show" id="2Ro-01-iH7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9x-d6-EH8">
@@ -717,11 +768,15 @@ CA
                                     <backgroundConfiguration key="background"/>
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="iNW-e9-MjZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cOZ-QR-1Xk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vKG-2M-qku"/>
                     <connections>
                         <outlet property="txtBuscardor" destination="o50-iv-oQc" id="QJT-Ua-lRV"/>
                         <outlet property="txtNombreEmpleadoBuscar" destination="A9w-uK-P1e" id="IJS-vW-rzO"/>
@@ -734,7 +789,7 @@ CA
         <!--Mesa Listado View Controller-->
         <scene sceneID="o5f-V3-7sT">
             <objects>
-                <viewController id="7rX-AG-qUQ" customClass="MesaListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="7rX-AG-qUQ" customClass="MesaListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ixL-GW-PT3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -747,6 +802,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="ujm-l9-YV1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh7-0E-MFW">
                                 <rect key="frame" x="60" y="826" width="112" height="36"/>
@@ -757,7 +815,7 @@ CA
                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="bWs-2U-pfd" kind="show" id="Ato-Ne-03F"/>
+                                    <segue destination="bWs-2U-pfd" kind="show" id="dHl-GR-ZZF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mesas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCi-JO-Ich">
@@ -789,6 +847,7 @@ CA
                         <viewLayoutGuide key="safeArea" id="dcc-WN-kaw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AQa-Do-9f4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvj-Xa-0Hb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -851,6 +910,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="7rX-AG-qUQ" kind="show" id="bbl-MS-6sw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plg-re-Y38">
                                 <rect key="frame" x="0.0" y="255" width="423" height="3"/>
@@ -957,9 +1019,9 @@ CA
         <!--Empleado Detalle View Controler-->
         <scene sceneID="0RX-KV-1e6">
             <objects>
-                <viewController id="Q34-DM-6Dj" customClass="EmpleadoDetalleViewControler" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Q34-DM-6Dj" customClass="EmpleadoDetalleViewControler" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GAo-Ff-eHV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Employer" translatesAutoresizingMaskIntoConstraints="NO" id="rtI-A3-oVt">
@@ -1070,6 +1132,9 @@ CA
                                     <backgroundConfiguration key="background"/>
                                     <color key="baseBackgroundColor" red="0.57647058819999997" green="0.1215686275" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="fVw-LT-0pn" kind="show" id="Cc3-uj-3dE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kK9-dk-vf0"/>
@@ -1091,7 +1156,7 @@ CA
         <!--Metodos Pago Agregar View Controller-->
         <scene sceneID="43I-cM-JPw">
             <objects>
-                <viewController storyboardIdentifier="MetPagoAgregar" modalPresentationStyle="overFullScreen" id="OBx-Fz-h3B" customClass="MetodosPagoAgregarViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MetPagoAgregar" modalPresentationStyle="fullScreen" id="OBx-Fz-h3B" customClass="MetodosPagoAgregarViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2os-bo-6mE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1145,8 +1210,8 @@ CA
                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFY-E4-7EQ">
-                                <rect key="frame" x="244" y="827" width="110" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3S-Ai-uS5">
+                                <rect key="frame" x="253" y="826" width="110" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Volver">
@@ -1154,7 +1219,7 @@ CA
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="volverListadoMetPago:" destination="OBx-Fz-h3B" eventType="touchUpInside" id="4Xn-Uy-j66"/>
+                                    <segue destination="ofI-Dp-UCo" kind="show" id="0Fi-Pj-7MY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1170,7 +1235,7 @@ CA
         <!--Categoria Listado View Controller-->
         <scene sceneID="ngB-1c-gmB">
             <objects>
-                <viewController id="j4x-q5-5uk" customClass="CategoriaListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="j4x-q5-5uk" customClass="CategoriaListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h1a-jd-lVS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1183,6 +1248,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="KAv-KK-g4n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx8-Xe-YMM">
                                 <rect key="frame" x="60" y="826" width="112" height="36"/>
@@ -1193,7 +1261,7 @@ CA
                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="P5B-YP-J5m" kind="show" id="Pzi-MQ-E9j"/>
+                                    <segue destination="P5B-YP-J5m" kind="show" id="Teh-7L-B0h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categorías" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hab-Eg-sCV">
@@ -1225,6 +1293,7 @@ CA
                         <viewLayoutGuide key="safeArea" id="HeB-io-HMb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="doP-ww-kId"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71Z-AJ-arM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1287,6 +1356,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="j4x-q5-5uk" kind="show" id="UG7-bp-Sv7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kiz-kh-n7M">
                                 <rect key="frame" x="0.0" y="255" width="423" height="3"/>
@@ -1393,7 +1465,7 @@ CA
         <!--Caja Reporte View Controller-->
         <scene sceneID="6pz-FH-Hh2">
             <objects>
-                <viewController storyboardIdentifier="CajaReporte" id="7AL-87-6fG" customClass="CajaReporteViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CajaReporte" modalPresentationStyle="fullScreen" id="7AL-87-6fG" customClass="CajaReporteViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wS-Wx-cx8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1425,6 +1497,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BDf-xE-0YZ" kind="show" id="6Yo-mA-une"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Precio Inicial..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jEe-BU-XKK">
                                 <rect key="frame" x="28" y="259" width="155" height="34"/>
@@ -1465,6 +1540,7 @@ CA
                         <viewLayoutGuide key="safeArea" id="Ozf-7j-roH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8NT-Hv-MbD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlc-SM-KKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1648,7 +1724,7 @@ CA
         <!--Plato Listado View Controller-->
         <scene sceneID="MQ3-7p-BLB">
             <objects>
-                <viewController id="D18-Ff-Tzt" customClass="PlatoListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="D18-Ff-Tzt" customClass="PlatoListadoViewController" customModule="ProyectoComanda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B1p-PP-y6Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1661,6 +1737,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="6A4-dN-hbf" kind="show" id="EfV-d4-wUR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osN-sH-8xS">
                                 <rect key="frame" x="60" y="826" width="112" height="36"/>
@@ -1703,6 +1782,7 @@ CA
                         <viewLayoutGuide key="safeArea" id="TbX-EH-6eF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VVm-Eg-pjR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udr-vg-xiy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1757,6 +1837,9 @@ CA
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="D18-Ff-Tzt" kind="show" id="kAY-z8-k2e"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUQ-gV-CNW">
                                 <rect key="frame" x="0.0" y="255" width="423" height="3"/>
@@ -1936,6 +2019,15 @@ CA
             <point key="canvasLocation" x="609" y="3286"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WuN-Pm-emc"/>
+        <segue reference="xC7-PO-IQu"/>
+        <segue reference="n28-3P-euU"/>
+        <segue reference="SRN-Xk-Pki"/>
+        <segue reference="b9s-6C-neO"/>
+        <segue reference="EfV-d4-wUR"/>
+        <segue reference="6Yo-mA-une"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="4564998" width="512" height="512"/>
         <image name="6232458" width="512" height="512"/>
