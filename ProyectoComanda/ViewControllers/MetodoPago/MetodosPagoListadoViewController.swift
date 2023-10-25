@@ -8,6 +8,12 @@
 import UIKit
 //INVOCAMOS ESTOS MÉTODOS
 class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //txt filtrado
+    
+    @IBOutlet weak var lblDatosRegistrados: UILabel!
+    @IBOutlet weak var txtFiltrado: UITextField!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         listaMets.count
     }
@@ -18,9 +24,15 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
         data.lblNombre.text = listaMets[indexPath.row].nombreMetodoPago!
         return data
     }
+    
     //METODO PARA RECARGAR LA TABLA
     @objc func cargarLista(Notification: NSNotification){
         listaMets = MetodoPagoService().listadoMetodos()
+        if listaMets.count == 0 {
+            lblDatosRegistrados.isHidden = false
+        }else {
+            lblDatosRegistrados.isHidden = true
+        }
         tblMetodoPago.reloadData()
 
     }
@@ -32,6 +44,11 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         listaMets = MetodoPagoService().listadoMetodos()
+        if listaMets.count == 0 {
+            lblDatosRegistrados.isHidden = false
+        }else {
+            lblDatosRegistrados.isHidden = true
+        }
         tblMetodoPago.dataSource = self
         tblMetodoPago.rowHeight = 90
         tblMetodoPago.delegate = self
@@ -64,4 +81,15 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
         performSegue(withIdentifier: "editarMetodo", sender: indexPath)
     }
 
+    @IBAction func btnFiltrado(_ sender: Any) {
+        listaMets = MetodoPagoService().listadoMetodos()
+        let nombreBuscar = txtFiltrado.text!
+        if nombreBuscar.count > 0 {
+            listaMets = listaMets.filter{ objeto in
+                return objeto.nombreMetodoPago!.contains(nombreBuscar)
+            }
+        }
+        tblMetodoPago.reloadData()
+    }
+   
 }
