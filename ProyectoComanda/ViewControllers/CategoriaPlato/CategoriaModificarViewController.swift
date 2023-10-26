@@ -1,27 +1,26 @@
 //
-//  MetodosPagoActualizarViewController.swift
+//  CategoriaModificarViewController.swift
 //  ProyectoComanda
 //
-//  Created by Gary on 30/09/23.
+//  Created by Rodolfo on 5/10/23.
 //
 
 import UIKit
 import Toaster
 
-class MetodosPagoActualizarViewController: UIViewController {
 
-    @IBOutlet weak var txtNombreMet: UITextField!
-    //VARIABLE QUE RECIBIMOS EN EL SUEGUE
-    var metodo: MetodoPago!
+class CategoriaModificarViewController: UIViewController {
+    
+    var categoria : CategoriaPlato!
+    
+    @IBOutlet weak var txtCategoria: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //AQUÍ COLOCAMOS LOS VALORES
-        txtNombreMet.text = metodo.nombreMetodoPago
-
+        txtCategoria.text = categoria.categoria
     }
     
-    @IBAction func btnActualizarMet(_ sender: Any) {
-        let nombre = txtNombreMet.text ?? ""
+    @IBAction func btnActualizar(_ sender: Any) {
+        let nombre = txtCategoria.text ?? ""
         //VALIDACIONES
         if(nombre.isEmpty){
             Toast(text: "El nombre no debe estar vacío").show()
@@ -39,35 +38,41 @@ class MetodosPagoActualizarViewController: UIViewController {
             return
         }
         //VALIDAR QUE NO SE REPITA EL NOMBRE
-        let lista = MetodoPagoService().listadoMetodos()
-        for metodoValida in lista {
-            if(metodoValida.nombreMetodoPago!.contains(nombre) && metodoValida.id != metodo.id){
-                Toast(text: "El nombre del método de pago se repite").show()
+        let lista = CategoriaService().listadoCategorias()
+        for catValida in lista {
+            if(catValida.categoria!.contains(nombre) && catValida.id != categoria.id){
+                Toast(text: "El nombre de la categoría se repite").show()
                 return
             }
         }
-        metodo.nombreMetodoPago = nombre
-        MetodoPagoService().actualizarMetodo(metodo: metodo)
+        categoria.categoria = nombre
+        CategoriaService().actualizarCategoria(cat: categoria)
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
-        Toast(text: "Método actualizado").show()
+
+        Toast(text: "Categoría actualizada").show()
         //Con esto volvemos a la pestaña anterior
         self.navigationController?.popViewController(animated: true)
         
     }
     
-    @IBAction func btnEliminarMet(_ sender: Any) {
+    @IBAction func btnEliminar(_ sender: Any) {
         let ventana = UIAlertController(title: "Sistema", message: "¿Seguro de eliminar?", preferredStyle: .alert)
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
-            MetodoPagoService().eliminarMetodo(metodo: self.metodo)
-            NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
-            Toast(text: "Método eliminado").show()
-            //VOLVER A LA PESTAÑA ANTERIOR
-            self.navigationController?.popViewController(animated: true)
+            if self.categoria.fk_categoria_plato?.count == 0 {
+                CategoriaService().eliminarCategoria(cat: self.categoria)
+                NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
+                Toast(text: "Categoría eliminada eliminado").show()
+                //VOLVER A LA PESTAÑA ANTERIOR
+                self.navigationController?.popViewController(animated: true)
+            }else {
+                Toast(text: "No se puede eliminar una categoría con platos registrados").show()
+
+            }
+            
         })
         ventana.addAction(botonAceptar)
         ventana.addAction(UIAlertAction(title: "No", style: .cancel))
         present(ventana, animated: true)
-        
     }
     
 

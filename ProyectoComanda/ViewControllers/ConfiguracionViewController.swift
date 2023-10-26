@@ -16,6 +16,10 @@ class ConfiguracionViewController: UIViewController {
     }
     
 
+    @IBAction func btnVistaCategoria(_ sender: Any) {
+        performSegue(withIdentifier: "vistaCategoria", sender: self)
+
+    }
     /*
     // MARK: - Navigation
 

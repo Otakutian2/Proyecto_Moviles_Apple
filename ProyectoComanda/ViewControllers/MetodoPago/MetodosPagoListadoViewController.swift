@@ -26,8 +26,14 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     }
     
     //METODO PARA RECARGAR LA TABLA
-    @objc func cargarLista(Notification: NSNotification){
+    @objc func cargarLista(){
         listaMets = MetodoPagoService().listadoMetodos()
+        let nombreBuscar = txtFiltrado.text!
+        if nombreBuscar.count > 0 {
+            listaMets = listaMets.filter{ objeto in
+                return objeto.nombreMetodoPago!.contains(nombreBuscar)
+            }
+        }
         if listaMets.count == 0 {
             lblDatosRegistrados.isHidden = false
         }else {
@@ -44,6 +50,7 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         listaMets = MetodoPagoService().listadoMetodos()
+        
         if listaMets.count == 0 {
             lblDatosRegistrados.isHidden = false
         }else {
@@ -63,9 +70,7 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     //MÉTODO QUE SE DISPARA AL LLAMAR A LAS FLECHAS SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //MÉTODO QUE SE DISPARAR AL MOVERSE DE PESTAÑA CON LA FLECHA
-        if(segue.identifier == "nuevoMetodo"){
-            let pantalla = segue.destination as! MetodosPagoAgregarViewController
-        }
+       
         if(segue.identifier == "editarMetodo"){
             let pantalla = segue.destination as! MetodosPagoActualizarViewController
             let indexPath = sender as! IndexPath
@@ -82,14 +87,7 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     }
 
     @IBAction func btnFiltrado(_ sender: Any) {
-        listaMets = MetodoPagoService().listadoMetodos()
-        let nombreBuscar = txtFiltrado.text!
-        if nombreBuscar.count > 0 {
-            listaMets = listaMets.filter{ objeto in
-                return objeto.nombreMetodoPago!.contains(nombreBuscar)
-            }
-        }
-        tblMetodoPago.reloadData()
+        cargarLista()
     }
    
 }
