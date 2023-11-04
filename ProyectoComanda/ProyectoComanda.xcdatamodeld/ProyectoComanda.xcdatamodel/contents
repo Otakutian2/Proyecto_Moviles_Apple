@@ -1,23 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Caja" representedClassName="Caja" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fk_caja_cdp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comprobante" inverseName="fk_cdp_caja" inverseEntity="Comprobante"/>
+        <relationship name="fk_caja_establecimiento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Establecimiento" inverseName="fk_establecimiento_caja" inverseEntity="Establecimiento"/>
+    </entity>
+    <entity name="Cargo" representedClassName="Cargo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <relationship name="fk_cargo_empleado" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Empleado" inverseName="fk_empleado_cargo" inverseEntity="Empleado"/>
+    </entity>
     <entity name="CategoriaPlato" representedClassName="CategoriaPlato" syncable="YES">
         <attribute name="categoria" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="fk_categoria_plato" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plato" inverseName="fk_plato_categoria" inverseEntity="Plato"/>
     </entity>
+    <entity name="Comanda" representedClassName="Comanda" syncable="YES">
+        <attribute name="cantidadAsientos" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fechaEmision" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="precioTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="fk_comanda_comprobante" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comprobante" inverseName="fk_cdp_comanda" inverseEntity="Comprobante"/>
+        <relationship name="fk_comanda_detalleComanda" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DetalleComanda" inverseName="fk_detalle_comanda" inverseEntity="DetalleComanda"/>
+        <relationship name="fk_comanda_empleado" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Empleado" inverseName="fk_empleado_comanda" inverseEntity="Empleado"/>
+        <relationship name="fk_comanda_estado" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EstadoComanda" inverseName="fk_estado_comanda" inverseEntity="EstadoComanda"/>
+        <relationship name="fk_comanda_mesa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mesa" inverseName="fk_mesa_comanda" inverseEntity="Mesa"/>
+    </entity>
+    <entity name="Comprobante" representedClassName="Comprobante" syncable="YES">
+        <attribute name="descuento" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fechaEmision" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="igv" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nombreCliente" optional="YES" attributeType="String"/>
+        <attribute name="precioTotalPedido" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="subTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="fk_cdp_caja" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Caja" inverseName="fk_caja_cdp" inverseEntity="Caja"/>
+        <relationship name="fk_cdp_comanda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comanda" inverseName="fk_comanda_comprobante" inverseEntity="Comanda"/>
+        <relationship name="fk_cdp_empleado" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Empleado" inverseName="fk_empleado_comprobante" inverseEntity="Empleado"/>
+        <relationship name="fk_cdp_metodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetodoPago" inverseName="fk_metodo_cdp" inverseEntity="MetodoPago"/>
+        <relationship name="fk_CDP_tipocdp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TipoComprobante" inverseName="fk_tipoCDP_CDP" inverseEntity="TipoComprobante"/>
+    </entity>
+    <entity name="DetalleComanda" representedClassName="DetalleComanda" syncable="YES">
+        <attribute name="cantidadPedido" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="observacion" optional="YES" attributeType="String"/>
+        <attribute name="precioUnitario" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="fk_detalle_comanda" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comanda" inverseName="fk_comanda_detalleComanda" inverseEntity="Comanda"/>
+        <relationship name="fk_detalle_plato" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plato" inverseName="fk_plato_detalle" inverseEntity="Plato"/>
+    </entity>
+    <entity name="Empleado" representedClassName="Empleado" syncable="YES">
+        <attribute name="apellido" optional="YES" attributeType="String"/>
+        <attribute name="dni" optional="YES" attributeType="String"/>
+        <attribute name="fechaRegistro" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <attribute name="telefono" optional="YES" attributeType="String"/>
+        <relationship name="fk_empleado_cargo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cargo" inverseName="fk_cargo_empleado" inverseEntity="Cargo"/>
+        <relationship name="fk_empleado_comanda" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comanda" inverseName="fk_comanda_empleado" inverseEntity="Comanda"/>
+        <relationship name="fk_empleado_comprobante" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comprobante" inverseName="fk_cdp_empleado" inverseEntity="Comprobante"/>
+        <relationship name="fk_empleado_usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="fk_usuario_empleado" inverseEntity="Usuario"/>
+    </entity>
+    <entity name="Establecimiento" representedClassName="Establecimiento" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nomEstablecimiento" optional="YES" attributeType="String"/>
+        <attribute name="rucestablecimiento" optional="YES" attributeType="String"/>
+        <attribute name="telefonoEstablecimiento" optional="YES" attributeType="String"/>
+        <relationship name="fk_establecimiento_caja" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Caja" inverseName="fk_caja_establecimiento" inverseEntity="Caja"/>
+    </entity>
+    <entity name="EstadoComanda" representedClassName="EstadoComanda" syncable="YES">
+        <attribute name="estado" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fk_estado_comanda" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comanda" inverseName="fk_comanda_estado" inverseEntity="Comanda"/>
+    </entity>
+    <entity name="Mesa" representedClassName="Mesa" syncable="YES">
+        <attribute name="cantidadAsientos" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="estado" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fk_mesa_comanda" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comanda" inverseName="fk_comanda_mesa" inverseEntity="Comanda"/>
+    </entity>
     <entity name="MetodoPago" representedClassName="MetodoPago" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nombreMetodoPago" optional="YES" attributeType="String"/>
+        <relationship name="fk_metodo_cdp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comprobante" inverseName="fk_cdp_metodo" inverseEntity="Comprobante"/>
     </entity>
     <entity name="Plato" representedClassName="Plato" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String"/>
         <attribute name="precioPlato" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="fk_plato_categoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoriaPlato" inverseName="fk_categoria_plato" inverseEntity="CategoriaPlato"/>
+        <relationship name="fk_plato_detalle" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DetalleComanda" inverseName="fk_detalle_plato" inverseEntity="DetalleComanda"/>
+    </entity>
+    <entity name="TipoComprobante" representedClassName="TipoComprobante" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String"/>
+        <relationship name="fk_tipoCDP_CDP" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comprobante" inverseName="fk_CDP_tipocdp" inverseEntity="Comprobante"/>
+    </entity>
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES">
+        <attribute name="contrasena" optional="YES" attributeType="String"/>
+        <attribute name="correo" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fk_usuario_empleado" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Empleado" inverseName="fk_empleado_usuario" inverseEntity="Empleado"/>
     </entity>
     <elements>
         <element name="CategoriaPlato" positionX="-18" positionY="45" width="128" height="74"/>
-        <element name="MetodoPago" positionX="-27" positionY="18" width="128" height="59"/>
-        <element name="Plato" positionX="-27" positionY="36" width="128" height="89"/>
+        <element name="MetodoPago" positionX="-27" positionY="18" width="128" height="74"/>
+        <element name="Plato" positionX="-27" positionY="36" width="128" height="104"/>
+        <element name="Cargo" positionX="-18" positionY="63" width="128" height="74"/>
+        <element name="Empleado" positionX="-9" positionY="72" width="128" height="179"/>
+        <element name="Usuario" positionX="0" positionY="81" width="128" height="89"/>
+        <element name="EstadoComanda" positionX="18" positionY="144" width="128" height="74"/>
+        <element name="Caja" positionX="27" positionY="153" width="128" height="74"/>
+        <element name="Establecimiento" positionX="36" positionY="162" width="128" height="104"/>
+        <element name="Comanda" positionX="54" positionY="189" width="128" height="164"/>
+        <element name="Comprobante" positionX="9" positionY="135" width="128" height="209"/>
+        <element name="DetalleComanda" positionX="18" positionY="144" width="128" height="119"/>
+        <element name="TipoComprobante" positionX="27" positionY="153" width="128" height="74"/>
+        <element name="Mesa" positionX="36" positionY="198" width="128" height="89"/>
     </elements>
 </model>
