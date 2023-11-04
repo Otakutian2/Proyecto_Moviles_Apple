@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
 class CargoService: NSObject {
-    func obtenerTamaño() -> Int {
+    func obtenerTamano() -> Int {
         let lista = obtenerCargos()
         return lista.count
         
@@ -18,9 +19,11 @@ class CargoService: NSObject {
         var arreglo: [Cargo] = []
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Cargo> = Cargo.fetchRequest()
+        let sort = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         do{
-            let request = Cargo.fetchRequest()
-            arreglo = try bd.fetch(request)
+            arreglo = try bd.fetch(fetchRequest)
         } catch let ex as NSError{
             print(ex.localizedDescription)
         }

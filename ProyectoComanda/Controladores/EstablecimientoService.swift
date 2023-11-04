@@ -26,7 +26,7 @@ class EstablecimientoService: NSObject {
         }
     }
     
-    func obtenerTamaño() -> Int {
+    func obtenerTamano() -> Int {
         var arreglo: [Establecimiento] = []
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let bd = delegate.persistentContainer.viewContext

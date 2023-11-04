@@ -30,9 +30,11 @@ class MetodoPagoService: NSObject {
         var arreglo: [MetodoPago] = []
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<MetodoPago> = MetodoPago.fetchRequest()
+        let sort = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         do{
-            let request = MetodoPago.fetchRequest()
-            arreglo = try bd.fetch(request)
+            arreglo = try bd.fetch(fetchRequest)
         } catch let ex as NSError{
             print(ex.localizedDescription)
         }

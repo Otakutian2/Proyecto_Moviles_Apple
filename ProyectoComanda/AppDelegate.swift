@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let context = persistentContainer.viewContext
         //INICIALIZAR DATOS
-        if TipoComprobanteService().obtenerTamaño() == 0 {
+        if TipoComprobanteService().obtenerTamano() == 0 {
             let TipoComprobante1 = TipoComprobante(context: context)
             TipoComprobante1.id = 1
             TipoComprobante1.tipo = "Nota de Venta"
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TipoComprobante2.tipo = "Boleta"
             
         }
-        if EstablecimientoService().obtenerTamaño() == 0 {
+        if EstablecimientoService().obtenerTamano() == 0 {
             let establecimiento = Establecimiento(context: context)
             establecimiento.id = 1
             establecimiento.nomEstablecimiento = "Ejemplo"
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             establecimiento.telefonoEstablecimiento = "000"
             establecimiento.direccionestablecimiento = "SADA"
         }
-        if CargoService().obtenerTamaño() == 0 {
+        if CargoService().obtenerTamano() == 0 {
             let cargo1 = Cargo(context: context)
             cargo1.id = 1
             cargo1.nombre = "ADMINISTRADOR"
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             cargo4.nombre = "GERENTE"
         }
         
-        if EstadoComandaService().obtenerTamaño() == 0 {
+        if EstadoComandaService().obtenerTamano() == 0 {
             let estado1 = EstadoComanda(context: context)
             estado1.id = 1
             estado1.estado = "Generado"
@@ -62,7 +62,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             estado2.id = 2
             estado2.estado = "Pagado"
         }
-        
+        //guardar empleados
+        if UsuarioService().obtenerTamano() == 0{
+            let usuario1 = Usuario(context: context)
+            usuario1.id = 1
+            usuario1.correo = "admin@admin.com"
+            usuario1.contrasena = "admin"
+            
+            let usuario2 = Usuario(context: context)
+            usuario2.id = 2
+            usuario2.correo = "mesero@mesero.com"
+            usuario2.contrasena = "mesero"
+            
+            let usuario3 = Usuario(context: context)
+            usuario3.id = 3
+            usuario3.correo = "cajero@cajero.com"
+            usuario3.contrasena = "cajero"
+            
+            let usuario4 = Usuario(context: context)
+            usuario4.id = 4
+            usuario4.correo = "gerente@gerente.com"
+            usuario4.contrasena = "gerente"
+        }
         
         do {
             print("Iniciando BD")
@@ -70,6 +91,72 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let ex as NSError {
             print(ex.localizedDescription)
         }
+        
+        
+        if EmpleadoService().obtenerTamano() == 0 {
+            //LISTA DE CARGOS Y USUARIOS PARA INSTANCIAR
+            let cargos = CargoService().obtenerCargos()
+            let usuarios = UsuarioService().obtenerUsuarios()
+            
+            //FECHA REGISTRO
+            let fechaActual = Date()
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "dd-MM-yyyy"
+            let fechaActualString = dateFormat.string(from: fechaActual)
+            
+            //EMPLEADOS
+            let empleado1 = Empleado(context: context)
+            empleado1.id = 1
+            empleado1.nombre = "admin"
+            empleado1.telefono = "9"
+            empleado1.apellido = "admin"
+            empleado1.dni = "9"
+            empleado1.fechaRegistro = fechaActualString
+            empleado1.fk_empleado_cargo = cargos[0]
+            empleado1.fk_empleado_usuario = usuarios[0]
+            
+            let empleado2 = Empleado(context: context)
+            empleado2.id = 2
+            empleado2.nombre = "mesero"
+            empleado2.telefono = "98"
+            empleado2.apellido = "mesero"
+            empleado2.dni = "98"
+            empleado2.fechaRegistro = fechaActualString
+            empleado2.fk_empleado_cargo = cargos[1]
+            empleado2.fk_empleado_usuario = usuarios[1]
+            
+            let empleado3 = Empleado(context: context)
+            empleado3.id = 3
+            empleado3.nombre = "cajero"
+            empleado3.telefono = "97"
+            empleado3.apellido = "cajero"
+            empleado3.dni = "97"
+            empleado3.fechaRegistro = fechaActualString
+            empleado3.fk_empleado_cargo = cargos[2]
+            empleado3.fk_empleado_usuario = usuarios[2]
+            
+            let empleado4 = Empleado(context: context)
+            empleado4.id = 3
+            empleado4.nombre = "gerente"
+            empleado4.telefono = "96"
+            empleado4.apellido = "gerente"
+            empleado4.dni = "96"
+            empleado4.fechaRegistro = fechaActualString
+            empleado4.fk_empleado_cargo = cargos[3]
+            empleado4.fk_empleado_usuario = usuarios[3]
+            
+            
+        }
+        do {
+            print("Registrando empleados")
+            try context.save()
+        } catch let ex as NSError {
+            print(ex.localizedDescription)
+        }
+        
+        
+    
+        
         
         return true
     }

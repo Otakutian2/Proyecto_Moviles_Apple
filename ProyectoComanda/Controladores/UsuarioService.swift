@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
 class UsuarioService: NSObject {
-    func obtenerTamaño() -> Int {
+    func obtenerTamano() -> Int {
         let lista = obtenerUsuarios()
         return lista.count
         
@@ -18,9 +19,11 @@ class UsuarioService: NSObject {
         var arreglo: [Usuario] = []
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Usuario> = Usuario.fetchRequest()
+        let sort = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         do{
-            let request = Usuario.fetchRequest()
-            arreglo = try bd.fetch(request)
+            arreglo = try bd.fetch(fetchRequest)
         } catch let ex as NSError{
             print(ex.localizedDescription)
         }
