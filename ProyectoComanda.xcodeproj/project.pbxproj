@@ -42,8 +42,6 @@
 		4E56C4782AF5DDE400B414D7 /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C45E2AF5DDE400B414D7 /* Usuario+CoreDataProperties.swift */; };
 		4E56C4792AF5DDE400B414D7 /* DetalleComanda+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C45F2AF5DDE400B414D7 /* DetalleComanda+CoreDataClass.swift */; };
 		4E56C47A2AF5DDE400B414D7 /* DetalleComanda+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4602AF5DDE400B414D7 /* DetalleComanda+CoreDataProperties.swift */; };
-		4E56C47B2AF5DDE400B414D7 /* Establecimiento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4612AF5DDE400B414D7 /* Establecimiento+CoreDataClass.swift */; };
-		4E56C47C2AF5DDE400B414D7 /* Establecimiento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4622AF5DDE400B414D7 /* Establecimiento+CoreDataProperties.swift */; };
 		4E56C47D2AF5DDE400B414D7 /* Mesa+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4632AF5DDE400B414D7 /* Mesa+CoreDataClass.swift */; };
 		4E56C47E2AF5DDE400B414D7 /* Mesa+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4642AF5DDE400B414D7 /* Mesa+CoreDataProperties.swift */; };
 		4E56C47F2AF5DDE400B414D7 /* Comprobante+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4652AF5DDE400B414D7 /* Comprobante+CoreDataClass.swift */; };
@@ -63,6 +61,9 @@
 		4E5A843E2AE9CB4D002EE753 /* CategoriaPlato+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A843A2AE9CB4D002EE753 /* CategoriaPlato+CoreDataProperties.swift */; };
 		4E5A84402AE9CD38002EE753 /* CategoriaPlatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A843F2AE9CD38002EE753 /* CategoriaPlatoTableViewCell.swift */; };
 		4E5A84422AE9CD79002EE753 /* PlatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A84412AE9CD79002EE753 /* PlatoTableViewCell.swift */; };
+		4E6953C32AF6E85000511B25 /* EstablecimientoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C22AF6E85000511B25 /* EstablecimientoService.swift */; };
+		4E6953C62AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C42AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift */; };
+		4E6953C72AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C52AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift */; };
 		4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
@@ -138,8 +139,6 @@
 		4E56C45E2AF5DDE400B414D7 /* Usuario+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Usuario+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4E56C45F2AF5DDE400B414D7 /* DetalleComanda+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetalleComanda+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		4E56C4602AF5DDE400B414D7 /* DetalleComanda+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetalleComanda+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		4E56C4612AF5DDE400B414D7 /* Establecimiento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Establecimiento+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		4E56C4622AF5DDE400B414D7 /* Establecimiento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Establecimiento+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4E56C4632AF5DDE400B414D7 /* Mesa+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesa+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		4E56C4642AF5DDE400B414D7 /* Mesa+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mesa+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4E56C4652AF5DDE400B414D7 /* Comprobante+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comprobante+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -159,6 +158,9 @@
 		4E5A843A2AE9CB4D002EE753 /* CategoriaPlato+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriaPlato+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4E5A843F2AE9CD38002EE753 /* CategoriaPlatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaPlatoTableViewCell.swift; sourceTree = "<group>"; };
 		4E5A84412AE9CD79002EE753 /* PlatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoTableViewCell.swift; sourceTree = "<group>"; };
+		4E6953C22AF6E85000511B25 /* EstablecimientoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablecimientoService.swift; sourceTree = "<group>"; };
+		4E6953C42AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Establecimiento+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4E6953C52AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Establecimiento+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoDTO.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +249,8 @@
 		4E16DD082AE735D5004A505A /* Entidades */ = {
 			isa = PBXGroup;
 			children = (
+				4E6953C42AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift */,
+				4E6953C52AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift */,
 				4E56C4532AF5DDE400B414D7 /* Comanda+CoreDataClass.swift */,
 				4E56C4542AF5DDE400B414D7 /* Comanda+CoreDataProperties.swift */,
 				4E56C4552AF5DDE400B414D7 /* Cargo+CoreDataClass.swift */,
@@ -261,8 +265,6 @@
 				4E56C45E2AF5DDE400B414D7 /* Usuario+CoreDataProperties.swift */,
 				4E56C45F2AF5DDE400B414D7 /* DetalleComanda+CoreDataClass.swift */,
 				4E56C4602AF5DDE400B414D7 /* DetalleComanda+CoreDataProperties.swift */,
-				4E56C4612AF5DDE400B414D7 /* Establecimiento+CoreDataClass.swift */,
-				4E56C4622AF5DDE400B414D7 /* Establecimiento+CoreDataProperties.swift */,
 				4E56C4632AF5DDE400B414D7 /* Mesa+CoreDataClass.swift */,
 				4E56C4642AF5DDE400B414D7 /* Mesa+CoreDataProperties.swift */,
 				4E56C4652AF5DDE400B414D7 /* Comprobante+CoreDataClass.swift */,
@@ -286,6 +288,7 @@
 				4E5A84332AE9CA91002EE753 /* CategoriaService.swift */,
 				4E5A84352AE9CAA1002EE753 /* PlatoService.swift */,
 				4E56C4872AF5DEE100B414D7 /* TipoComprobanteService.swift */,
+				4E6953C22AF6E85000511B25 /* EstablecimientoService.swift */,
 			);
 			path = Controladores;
 			sourceTree = "<group>";
@@ -674,7 +677,6 @@
 				4E56C4792AF5DDE400B414D7 /* DetalleComanda+CoreDataClass.swift in Sources */,
 				4E16DD072AE73556004A505A /* ProyectoComanda.xcdatamodeld in Sources */,
 				4E54743F2AC88C5900BB0BD6 /* EstablecimientoViewController.swift in Sources */,
-				4E56C47C2AF5DDE400B414D7 /* Establecimiento+CoreDataProperties.swift in Sources */,
 				4E5465922AE06DAD00492ADC /* CajaReporteViewController.swift in Sources */,
 				4E56C4732AF5DDE400B414D7 /* Empleado+CoreDataClass.swift in Sources */,
 				4E56C46E2AF5DDE400B414D7 /* Comanda+CoreDataProperties.swift in Sources */,
@@ -690,6 +692,7 @@
 				4E56C4772AF5DDE400B414D7 /* Usuario+CoreDataClass.swift in Sources */,
 				E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */,
 				4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */,
+				4E6953C32AF6E85000511B25 /* EstablecimientoService.swift in Sources */,
 				E29133702AE04EDB009E84B9 /* PlatoActualizarViewController.swift in Sources */,
 				4E56C4702AF5DDE400B414D7 /* Cargo+CoreDataProperties.swift in Sources */,
 				4E56C46F2AF5DDE400B414D7 /* Cargo+CoreDataClass.swift in Sources */,
@@ -711,9 +714,10 @@
 				4E56C47A2AF5DDE400B414D7 /* DetalleComanda+CoreDataProperties.swift in Sources */,
 				4E56C4752AF5DDE400B414D7 /* TipoComprobante+CoreDataClass.swift in Sources */,
 				4E5A84342AE9CA91002EE753 /* CategoriaService.swift in Sources */,
-				4E56C47B2AF5DDE400B414D7 /* Establecimiento+CoreDataClass.swift in Sources */,
 				4E56C4782AF5DDE400B414D7 /* Usuario+CoreDataProperties.swift in Sources */,
+				4E6953C72AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift in Sources */,
 				4E5A84302AE9CA1E002EE753 /* CategoriaPlatoDTO.swift in Sources */,
+				4E6953C62AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift in Sources */,
 				4E56C4832AF5DDE400B414D7 /* Plato+CoreDataClass.swift in Sources */,
 				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
 				DC596E802ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift in Sources */,

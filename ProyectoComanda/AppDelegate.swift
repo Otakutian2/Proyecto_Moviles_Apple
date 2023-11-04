@@ -18,16 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let context = persistentContainer.viewContext
         //INICIALIZAR DATOS
         if TipoComprobanteService().obtenerTamaño() == 0 {
-            let TipoComprobante1 = TipoComprobante(context: context)
+            var TipoComprobante1 = TipoComprobante(context: context)
             TipoComprobante1.id = 1
             TipoComprobante1.tipo = "Nota de Venta"
             
-            let TipoComprobante2 = TipoComprobante(context: context)
+            var TipoComprobante2 = TipoComprobante(context: context)
             TipoComprobante2.id = 2
             TipoComprobante2.tipo = "Boleta"
             
         }
+        if EstablecimientoService().obtenerTamaño() == 0 {
+            var establecimiento = Establecimiento(context: context)
+            establecimiento.id = 1
+            establecimiento.nomEstablecimiento = "Ejemplo"
+            establecimiento.rucestablecimiento = "123"
+            establecimiento.telefonoEstablecimiento = "000"
+            establecimiento.direccionestablecimiento = "SADA"
+            print(establecimiento.nomEstablecimiento)
+        }
         do {
+            print("Iniciando BD")
             try context.save()
         } catch let ex as NSError {
             print(ex.localizedDescription)

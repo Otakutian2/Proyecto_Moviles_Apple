@@ -2,7 +2,7 @@
 //  Establecimiento+CoreDataProperties.swift
 //  ProyectoComanda
 //
-//  Created by Gary on 3/11/23.
+//  Created by Gary on 4/11/23.
 //
 //
 
@@ -18,8 +18,9 @@ extension Establecimiento {
 
     @NSManaged public var id: Int16
     @NSManaged public var nomEstablecimiento: String?
-    @NSManaged public var telefonoEstablecimiento: String?
     @NSManaged public var rucestablecimiento: String?
+    @NSManaged public var telefonoEstablecimiento: String?
+    @NSManaged public var direccionestablecimiento: String?
     @NSManaged public var fk_establecimiento_caja: NSSet?
 
 }

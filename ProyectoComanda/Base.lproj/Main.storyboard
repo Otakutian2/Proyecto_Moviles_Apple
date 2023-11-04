@@ -448,15 +448,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rm-ad-FcX">
-                                <rect key="frame" x="25" y="826" width="112" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Actualizar">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
-                                    <color key="baseBackgroundColor" systemColor="tintColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFN-el-3Kb">
                                 <rect key="frame" x="130" y="283" width="183" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -519,37 +510,34 @@
                                     <backgroundConfiguration key="background" image="llamada-telefonica"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1x-2S-hdx">
-                                <rect key="frame" x="293" y="826" width="110" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rm-ad-FcX">
+                                <rect key="frame" x="44" y="805" width="326" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Volver">
+                                <buttonConfiguration key="configuration" style="filled" title="Actualizar">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
-                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                    <color key="baseBackgroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="volverListadoMetPago:" destination="OBx-Fz-h3B" eventType="touchUpInside" id="rSe-hK-gqQ"/>
-                                    <segue destination="6A4-dN-hbf" kind="show" id="RGq-Kh-c3q"/>
+                                    <action selector="btnActualizar:" destination="iGz-hL-IG8" eventType="touchUpInside" id="fOY-Hh-Z5k"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ft-uN-UR4">
-                                <rect key="frame" x="159" y="826" width="110" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Cancelar">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
-                                    <color key="baseBackgroundColor" red="0.57647058823529407" green="0.12156862745098039" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ET1-ar-doq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="eUd-bX-Xbb"/>
+                    <connections>
+                        <outlet property="txtCodigo" destination="VFN-el-3Kb" id="5AM-U5-pb1"/>
+                        <outlet property="txtDireccion" destination="lm6-Db-vwH" id="Cxb-aY-PsE"/>
+                        <outlet property="txtNombre" destination="4jS-h5-Pf7" id="SeW-b7-QVD"/>
+                        <outlet property="txtRuc" destination="ub7-xF-3Vr" id="unX-ad-hUX"/>
+                        <outlet property="txtTelefono" destination="WN5-ru-gJA" id="4lE-EP-fyY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dh-lM-vE9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-557" y="651"/>
+            <point key="canvasLocation" x="-557.97101449275362" y="650.89285714285711"/>
         </scene>
         <!--Metodos Pago Listado View Controller-->
         <scene sceneID="9F7-wa-3DH">

@@ -61,6 +61,7 @@
         <relationship name="fk_empleado_usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="fk_usuario_empleado" inverseEntity="Usuario"/>
     </entity>
     <entity name="Establecimiento" representedClassName="Establecimiento" syncable="YES">
+        <attribute name="direccionestablecimiento" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nomEstablecimiento" optional="YES" attributeType="String"/>
         <attribute name="rucestablecimiento" optional="YES" attributeType="String"/>
@@ -102,19 +103,19 @@
         <relationship name="fk_usuario_empleado" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Empleado" inverseName="fk_empleado_usuario" inverseEntity="Empleado"/>
     </entity>
     <elements>
-        <element name="CategoriaPlato" positionX="-18" positionY="45" width="128" height="74"/>
-        <element name="MetodoPago" positionX="-27" positionY="18" width="128" height="74"/>
-        <element name="Plato" positionX="-27" positionY="36" width="128" height="104"/>
-        <element name="Cargo" positionX="-18" positionY="63" width="128" height="74"/>
-        <element name="Empleado" positionX="-9" positionY="72" width="128" height="179"/>
-        <element name="Usuario" positionX="0" positionY="81" width="128" height="89"/>
-        <element name="EstadoComanda" positionX="18" positionY="144" width="128" height="74"/>
         <element name="Caja" positionX="27" positionY="153" width="128" height="74"/>
-        <element name="Establecimiento" positionX="36" positionY="162" width="128" height="104"/>
+        <element name="Cargo" positionX="-18" positionY="63" width="128" height="74"/>
+        <element name="CategoriaPlato" positionX="-18" positionY="45" width="128" height="74"/>
         <element name="Comanda" positionX="54" positionY="189" width="128" height="164"/>
         <element name="Comprobante" positionX="9" positionY="135" width="128" height="209"/>
         <element name="DetalleComanda" positionX="18" positionY="144" width="128" height="119"/>
-        <element name="TipoComprobante" positionX="27" positionY="153" width="128" height="74"/>
+        <element name="Empleado" positionX="-9" positionY="72" width="128" height="179"/>
+        <element name="Establecimiento" positionX="36" positionY="162" width="128" height="119"/>
+        <element name="EstadoComanda" positionX="18" positionY="144" width="128" height="74"/>
         <element name="Mesa" positionX="36" positionY="198" width="128" height="89"/>
+        <element name="MetodoPago" positionX="-27" positionY="18" width="128" height="74"/>
+        <element name="Plato" positionX="-27" positionY="36" width="128" height="104"/>
+        <element name="TipoComprobante" positionX="27" positionY="153" width="128" height="74"/>
+        <element name="Usuario" positionX="0" positionY="81" width="128" height="89"/>
     </elements>
 </model>
