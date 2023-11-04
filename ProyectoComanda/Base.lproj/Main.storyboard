@@ -249,7 +249,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="fVw-LT-0pn" kind="show" id="SRN-Xk-Pki"/>
+                                    <action selector="vistaEmpleado:" destination="6A4-dN-hbf" eventType="touchUpInside" id="8oH-tc-H7r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUt-eP-hHL">
@@ -267,7 +267,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="btnVistaCategoria:" destination="6A4-dN-hbf" eventType="touchUpInside" id="xl9-6g-Kw9"/>
+                                    <action selector="vistaCategoria:" destination="6A4-dN-hbf" eventType="touchUpInside" id="l8y-Yt-t6s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8M-6n-BV1">
@@ -286,7 +286,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="iGz-hL-IG8" kind="show" id="0yh-Me-dvb"/>
+                                    <action selector="vistaEstablecimiento:" destination="6A4-dN-hbf" eventType="touchUpInside" id="9aS-5S-ei5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnt-GZ-hh0">
@@ -304,7 +304,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="D18-Ff-Tzt" kind="show" id="WuN-Pm-emc"/>
+                                    <action selector="vistaPlato:" destination="6A4-dN-hbf" eventType="touchUpInside" id="yat-td-Pji"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIu-sV-knr">
@@ -322,7 +322,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="7rX-AG-qUQ" kind="show" id="n28-3P-euU"/>
+                                    <action selector="vistaMesas:" destination="6A4-dN-hbf" eventType="touchUpInside" id="hFC-61-I66"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYR-uq-6Pr">
@@ -340,7 +340,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="ofI-Dp-UCo" kind="show" id="b9s-6C-neO"/>
+                                    <action selector="vistaMetodoPago:" destination="6A4-dN-hbf" eventType="touchUpInside" id="JSy-u8-4Uv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-MZ-RAm">
@@ -375,11 +375,16 @@
                     <navigationItem key="navigationItem" id="pFS-Ud-qQ9"/>
                     <connections>
                         <segue destination="j4x-q5-5uk" kind="show" identifier="vistaCategoria" id="pJR-VC-Ff5"/>
+                        <segue destination="ofI-Dp-UCo" kind="show" identifier="vistaMetodoPago" id="t8a-m1-ij9"/>
+                        <segue destination="iGz-hL-IG8" kind="show" identifier="vistaEstablecimiento" id="okF-N2-DLU"/>
+                        <segue destination="fVw-LT-0pn" kind="show" identifier="vistaEmpleado" id="qWA-Vv-LKs"/>
+                        <segue destination="D18-Ff-Tzt" kind="show" identifier="vistaPlato" id="mcT-fR-DfH"/>
+                        <segue destination="7rX-AG-qUQ" kind="show" identifier="vistaMesa" id="Bhw-FS-Fjq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpQ-7K-2hr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414.4927536231885" y="-10.044642857142856"/>
+            <point key="canvasLocation" x="1454" y="-6"/>
         </scene>
         <!--Establecimiento View Controller-->
         <scene sceneID="lY0-KB-Rtg">
@@ -544,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dh-lM-vE9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-884" y="655"/>
+            <point key="canvasLocation" x="-557" y="651"/>
         </scene>
         <!--Metodos Pago Listado View Controller-->
         <scene sceneID="9F7-wa-3DH">
@@ -676,11 +681,12 @@
                         <outlet property="txtFiltrado" destination="9Gw-J3-G0Q" id="rkc-5d-0Ga"/>
                         <segue destination="OBx-Fz-h3B" kind="show" identifier="nuevoMetodo" id="PLm-Dy-iXx"/>
                         <segue destination="pkT-74-8gu" kind="show" identifier="editarMetodo" id="ttN-46-cPJ"/>
+                        <segue destination="6A4-dN-hbf" kind="show" id="48S-de-dSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jM-g3-9jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505.7971014492755" y="725.89285714285711"/>
+            <point key="canvasLocation" x="1414" y="863"/>
         </scene>
         <!--Metodos Pago Actualizar View Controller-->
         <scene sceneID="Ztd-Cz-J2H">
@@ -921,7 +927,7 @@ CA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvj-Xa-0Hb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-901" y="1968"/>
+            <point key="canvasLocation" x="-884" y="1965"/>
         </scene>
         <!--Mesa Agregar View Controller-->
         <scene sceneID="FX1-qW-bIj">
@@ -2013,6 +2019,112 @@ CA
             </objects>
             <point key="canvasLocation" x="-901.44927536231887" y="3285.9375"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="VC2-FV-ti0">
+            <objects>
+                <viewController id="w9J-42-ifk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1xC-bi-HmI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiX-Rz-1nl">
+                                <rect key="frame" x="-4" y="337" width="423" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.55294117649999996" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-QY-ojM">
+                                <rect key="frame" x="115" y="173" width="184" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="Principal2"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mantenimiento " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czt-3b-Cds">
+                                <rect key="frame" x="62" y="62" width="290" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="0.3411764706" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Oq-tP-CXk">
+                                <rect key="frame" x="54" y="102" width="290" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.3411764706" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDa-HI-BaT">
+                                <rect key="frame" x="31" y="814" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Nuevo"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CMs-xW-MC8">
+                                <rect key="frame" x="20" y="363" width="374" height="412"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="item_listComanda" rowHeight="139" id="o4d-Uy-7DS">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="139"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o4d-Uy-7DS" id="Spc-jb-gdU">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID COMANDA: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se1-GC-TBB">
+                                                    <rect key="frame" x="28" y="11" width="248" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID MESA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj6-6i-xOk">
+                                                    <rect key="frame" x="28" y="40" width="248" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ESTADO DE LA COMANDA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlr-XF-Fz9">
+                                                    <rect key="frame" x="28" y="102" width="209" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FECHA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNT-Mu-fXJ">
+                                                    <rect key="frame" x="28" y="69" width="248" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvX-I3-1OG">
+                                <rect key="frame" x="248" y="814" width="111" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Volver">
+                                    <color key="baseBackgroundColor" red="0.57647058819999997" green="0.1215686275" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KcD-FX-p3o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iwo-TR-Deu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="1540"/>
+        </scene>
         <!--Plato Agregar View Controller-->
         <scene sceneID="jcj-et-Bcm">
             <objects>
@@ -2267,9 +2379,9 @@ CA
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="n28-3P-euU"/>
-        <segue reference="SRN-Xk-Pki"/>
-        <segue reference="iNW-e9-MjZ"/>
+        <segue reference="Bhw-FS-Fjq"/>
+        <segue reference="qWA-Vv-LKs"/>
+        <segue reference="ujm-l9-YV1"/>
         <segue reference="H5F-7Q-3Zl"/>
     </inferredMetricsTieBreakers>
     <resources>
