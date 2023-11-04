@@ -1350,18 +1350,6 @@ CA
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fvx-DW-F9r">
-                                <rect key="frame" x="24" y="777" width="356" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Volver">
-                                    <backgroundConfiguration key="background"/>
-                                    <color key="baseBackgroundColor" red="0.57647058819999997" green="0.1215686275" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="fVw-LT-0pn" kind="show" id="Cc3-uj-3dE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kK9-dk-vf0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2530,7 +2518,6 @@ CA
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Bhw-FS-Fjq"/>
-        <segue reference="qWA-Vv-LKs"/>
         <segue reference="ujm-l9-YV1"/>
         <segue reference="H5F-7Q-3Zl"/>
     </inferredMetricsTieBreakers>
