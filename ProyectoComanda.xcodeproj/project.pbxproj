@@ -64,6 +64,10 @@
 		4E6953C32AF6E85000511B25 /* EstablecimientoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C22AF6E85000511B25 /* EstablecimientoService.swift */; };
 		4E6953C62AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C42AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift */; };
 		4E6953C72AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C52AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift */; };
+		4E6953C92AF6F4E200511B25 /* CargoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953C82AF6F4E200511B25 /* CargoService.swift */; };
+		4E6953CB2AF6F4F100511B25 /* EmpleadoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953CA2AF6F4F100511B25 /* EmpleadoService.swift */; };
+		4E6953CD2AF6F4FF00511B25 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953CC2AF6F4FF00511B25 /* UsuarioService.swift */; };
+		4E6953CF2AF6F51F00511B25 /* EstadoComandaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */; };
 		4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
@@ -161,6 +165,10 @@
 		4E6953C22AF6E85000511B25 /* EstablecimientoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablecimientoService.swift; sourceTree = "<group>"; };
 		4E6953C42AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Establecimiento+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		4E6953C52AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Establecimiento+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4E6953C82AF6F4E200511B25 /* CargoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoService.swift; sourceTree = "<group>"; };
+		4E6953CA2AF6F4F100511B25 /* EmpleadoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoService.swift; sourceTree = "<group>"; };
+		4E6953CC2AF6F4FF00511B25 /* UsuarioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioService.swift; sourceTree = "<group>"; };
+		4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoComandaService.swift; sourceTree = "<group>"; };
 		4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoDTO.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +297,10 @@
 				4E5A84352AE9CAA1002EE753 /* PlatoService.swift */,
 				4E56C4872AF5DEE100B414D7 /* TipoComprobanteService.swift */,
 				4E6953C22AF6E85000511B25 /* EstablecimientoService.swift */,
+				4E6953C82AF6F4E200511B25 /* CargoService.swift */,
+				4E6953CA2AF6F4F100511B25 /* EmpleadoService.swift */,
+				4E6953CC2AF6F4FF00511B25 /* UsuarioService.swift */,
+				4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */,
 			);
 			path = Controladores;
 			sourceTree = "<group>";
@@ -697,10 +709,12 @@
 				4E56C4702AF5DDE400B414D7 /* Cargo+CoreDataProperties.swift in Sources */,
 				4E56C46F2AF5DDE400B414D7 /* Cargo+CoreDataClass.swift in Sources */,
 				4E56C4822AF5DDE400B414D7 /* EstadoComanda+CoreDataProperties.swift in Sources */,
+				4E6953CB2AF6F4F100511B25 /* EmpleadoService.swift in Sources */,
 				4E5A84322AE9CA2B002EE753 /* PlatoDTO.swift in Sources */,
 				DC596E7E2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift in Sources */,
 				4E5A843D2AE9CB4D002EE753 /* CategoriaPlato+CoreDataClass.swift in Sources */,
 				4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */,
+				4E6953CD2AF6F4FF00511B25 /* UsuarioService.swift in Sources */,
 				4E54740E2AC8825400BB0BD6 /* AppDelegate.swift in Sources */,
 				4E56C4812AF5DDE400B414D7 /* EstadoComanda+CoreDataClass.swift in Sources */,
 				4E56C4882AF5DEE100B414D7 /* TipoComprobanteService.swift in Sources */,
@@ -720,7 +734,9 @@
 				4E6953C62AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift in Sources */,
 				4E56C4832AF5DDE400B414D7 /* Plato+CoreDataClass.swift in Sources */,
 				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
+				4E6953CF2AF6F51F00511B25 /* EstadoComandaService.swift in Sources */,
 				DC596E802ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift in Sources */,
+				4E6953C92AF6F4E200511B25 /* CargoService.swift in Sources */,
 				4E56C4862AF5DDE400B414D7 /* Caja+CoreDataProperties.swift in Sources */,
 				4E5A84362AE9CAA1002EE753 /* PlatoService.swift in Sources */,
 				4E56C4502AF5DC4100B414D7 /* EmpleadoDTO.swift in Sources */,

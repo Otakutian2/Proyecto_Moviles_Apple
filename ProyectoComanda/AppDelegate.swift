@@ -18,24 +18,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let context = persistentContainer.viewContext
         //INICIALIZAR DATOS
         if TipoComprobanteService().obtenerTamaño() == 0 {
-            var TipoComprobante1 = TipoComprobante(context: context)
+            let TipoComprobante1 = TipoComprobante(context: context)
             TipoComprobante1.id = 1
             TipoComprobante1.tipo = "Nota de Venta"
             
-            var TipoComprobante2 = TipoComprobante(context: context)
+            let TipoComprobante2 = TipoComprobante(context: context)
             TipoComprobante2.id = 2
             TipoComprobante2.tipo = "Boleta"
             
         }
         if EstablecimientoService().obtenerTamaño() == 0 {
-            var establecimiento = Establecimiento(context: context)
+            let establecimiento = Establecimiento(context: context)
             establecimiento.id = 1
             establecimiento.nomEstablecimiento = "Ejemplo"
             establecimiento.rucestablecimiento = "123"
             establecimiento.telefonoEstablecimiento = "000"
             establecimiento.direccionestablecimiento = "SADA"
-            print(establecimiento.nomEstablecimiento)
         }
+        if CargoService().obtenerTamaño() == 0 {
+            let cargo1 = Cargo(context: context)
+            cargo1.id = 1
+            cargo1.nombre = "ADMINISTRADOR"
+            
+            let cargo2 = Cargo(context: context)
+            cargo2.id = 2
+            cargo2.nombre = "MESERO"
+            
+            let cargo3 = Cargo(context: context)
+            cargo3.id = 3
+            cargo3.nombre = "CAJERO"
+            
+            let cargo4 = Cargo(context: context)
+            cargo4.id = 4
+            cargo4.nombre = "GERENTE"
+        }
+        
+        if EstadoComandaService().obtenerTamaño() == 0 {
+            let estado1 = EstadoComanda(context: context)
+            estado1.id = 1
+            estado1.estado = "Generado"
+            
+            let estado2 = EstadoComanda(context: context)
+            estado2.id = 2
+            estado2.estado = "Pagado"
+        }
+        
+        
         do {
             print("Iniciando BD")
             try context.save()
