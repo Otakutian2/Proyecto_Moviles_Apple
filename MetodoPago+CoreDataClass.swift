@@ -2,7 +2,7 @@
 //  MetodoPago+CoreDataClass.swift
 //  ProyectoComanda
 //
-//  Created by Gary on 23/10/23.
+//  Created by Gary on 3/11/23.
 //
 //
 

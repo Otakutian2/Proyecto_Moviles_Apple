@@ -15,6 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let context = persistentContainer.viewContext
+        //INICIALIZAR DATOS
+        if TipoComprobanteService().obtenerTamaño() == 0 {
+            let TipoComprobante1 = TipoComprobante(context: context)
+            TipoComprobante1.id = 1
+            TipoComprobante1.tipo = "Nota de Venta"
+            
+            let TipoComprobante2 = TipoComprobante(context: context)
+            TipoComprobante2.id = 2
+            TipoComprobante2.tipo = "Boleta"
+            
+        }
+        do {
+            try context.save()
+        } catch let ex as NSError {
+            print(ex.localizedDescription)
+        }
+        
         return true
     }
 
