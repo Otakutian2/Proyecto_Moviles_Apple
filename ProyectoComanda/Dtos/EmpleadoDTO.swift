@@ -14,5 +14,9 @@ struct EmpleadoDTO {
     var telefono: String
     var dni: String
     var fechaRegistro: String
+    var Usuario : Usuario
+    var Cargo : Cargo
+    
+    
     
 }

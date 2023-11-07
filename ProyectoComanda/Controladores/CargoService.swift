@@ -30,5 +30,18 @@ class CargoService: NSObject {
         
         return arreglo
     }
+    func obtenerCargoPorId(id: Int16)-> Cargo? {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Cargo> = Cargo.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+        do {
+            let cargo = try bd.fetch(fetchRequest)
+            return cargo.first
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+            return nil
+        }
+    }
 
 }

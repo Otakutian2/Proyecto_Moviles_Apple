@@ -12,8 +12,6 @@ class EmpleadoMantenimientoViewController: UIViewController, UITableViewDataSour
     
 
     @IBOutlet weak var tblEmpleados: UITableView!
-    @IBOutlet weak var txtBuscardor: UITextField!
-    @IBOutlet weak var txtNombreEmpleadoBuscar: UITextField!
     
     var listaEmpleados: [Empleado] = []
     var combo = DropDown()
@@ -21,9 +19,6 @@ class EmpleadoMantenimientoViewController: UIViewController, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtNombreEmpleadoBuscar.ponerIconoAlaDerecha(ImageViewName: "user")
-        txtBuscardor.ponerIconoAlaDerecha(ImageViewName: "search")
-        
         listaEmpleados = EmpleadoService().obtenerEmpleados()
         tblEmpleados.dataSource = self
         tblEmpleados.rowHeight = 130
@@ -34,6 +29,11 @@ class EmpleadoMantenimientoViewController: UIViewController, UITableViewDataSour
     
     @objc func cargarLista(){
         listaEmpleados = EmpleadoService().obtenerEmpleados()
+        if cargoFiltro != "Cargo"{
+            listaEmpleados = listaEmpleados.filter{ objeto in
+                return objeto.fk_empleado_cargo!.nombre!.contains(cargoFiltro)
+            }
+        }
         
         tblEmpleados.reloadData()
     }
@@ -73,20 +73,24 @@ class EmpleadoMantenimientoViewController: UIViewController, UITableViewDataSour
     }
     
     @IBAction func btnBuscar(_ sender: Any) {
+        cargarLista()
     }
     
     @IBAction func vistaCrearEmpleado(_ sender: Any) {
+        performSegue(withIdentifier: "nuevoEmpleado", sender: self)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "editarEmpleado", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "editarEmpleado"){
+            let pantalla = segue.destination as! EmpleadoActualizarViewController
+            let indexPath = sender as! IndexPath
+            //colocar aquí la variable de la vista actualizar
+            pantalla.empleado = listaEmpleados[indexPath.row]
+        }
     }
     
 }
-extension  UITextField  {
-    func ponerIconoAlaDerecha(ImageViewName:String) {
-        let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20 ))
-        imageView.image = UIImage(named: ImageViewName)
-        let imageViewContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 40))
-        imageViewContainerView.addSubview(imageView)
-        rightView = imageViewContainerView
-        rightViewMode = .always
-        self.tintColor  = .lightGray
-    }
-}
+

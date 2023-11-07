@@ -26,6 +26,7 @@
 		4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */; };
 		4E5474432AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */; };
 		4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */; };
+		4E55C9822AFA7BBD00114487 /* EmpleadoActualizarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E55C9812AFA7BBD00114487 /* EmpleadoActualizarViewController.swift */; };
 		4E56C4502AF5DC4100B414D7 /* EmpleadoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C44F2AF5DC4100B414D7 /* EmpleadoDTO.swift */; };
 		4E56C4522AF5DC4E00B414D7 /* UsuarioDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4512AF5DC4E00B414D7 /* UsuarioDTO.swift */; };
 		4E56C46D2AF5DDE400B414D7 /* Comanda+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56C4532AF5DDE400B414D7 /* Comanda+CoreDataClass.swift */; };
@@ -129,6 +130,7 @@
 		4E5474402AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoListadoViewController.swift; sourceTree = "<group>"; };
 		4E5474422AC88C8600BB0BD6 /* MetodosPagoAgregarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoAgregarViewController.swift; sourceTree = "<group>"; };
 		4E5474442AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodosPagoActualizarViewController.swift; sourceTree = "<group>"; };
+		4E55C9812AFA7BBD00114487 /* EmpleadoActualizarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoActualizarViewController.swift; sourceTree = "<group>"; };
 		4E56C44F2AF5DC4100B414D7 /* EmpleadoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoDTO.swift; sourceTree = "<group>"; };
 		4E56C4512AF5DC4E00B414D7 /* UsuarioDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioDTO.swift; sourceTree = "<group>"; };
 		4E56C4532AF5DDE400B414D7 /* Comanda+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comanda+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -422,6 +424,7 @@
 			children = (
 				DC596E7D2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift */,
 				DC596E7F2ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift */,
+				4E55C9812AFA7BBD00114487 /* EmpleadoActualizarViewController.swift */,
 			);
 			path = Empleados;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				4E56C4752AF5DDE400B414D7 /* TipoComprobante+CoreDataClass.swift in Sources */,
 				4E5A84342AE9CA91002EE753 /* CategoriaService.swift in Sources */,
 				4E56C4782AF5DDE400B414D7 /* Usuario+CoreDataProperties.swift in Sources */,
+				4E55C9822AFA7BBD00114487 /* EmpleadoActualizarViewController.swift in Sources */,
 				4E6953C72AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift in Sources */,
 				4E5A84302AE9CA1E002EE753 /* CategoriaPlatoDTO.swift in Sources */,
 				4E6953C62AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift in Sources */,

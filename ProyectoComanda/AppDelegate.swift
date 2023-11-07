@@ -62,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             estado2.id = 2
             estado2.estado = "Pagado"
         }
+        
         //guardar empleados
         if UsuarioService().obtenerTamano() == 0{
             let usuario1 = Usuario(context: context)
