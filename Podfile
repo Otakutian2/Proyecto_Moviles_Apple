@@ -17,4 +17,5 @@ target 'ProyectoComanda' do
   end
 pod 'DropDown'
 pod 'Toaster'
+pod 'Alamofire'
 end
