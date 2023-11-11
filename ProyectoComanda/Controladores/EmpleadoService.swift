@@ -9,11 +9,13 @@ import UIKit
 import CoreData
 
 class EmpleadoService: NSObject {
+    
     func obtenerTamano() -> Int {
         let lista = obtenerEmpleados()
         return lista.count
         
     }
+    
     func obtenerUltimoID() -> Int {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let bd = delegate.persistentContainer.viewContext
@@ -22,7 +24,7 @@ class EmpleadoService: NSObject {
         
         do{
             let resultados = try bd.fetch(fetchRequest)
-            if let ultimoRegistro = resultados.first as? Plato {
+            if let ultimoRegistro = resultados.first as? Empleado {
                 return Int(ultimoRegistro.id) + 1
             }
             
@@ -87,6 +89,49 @@ class EmpleadoService: NSObject {
         }catch let ex as NSError {
             print(ex.localizedDescription)
         }
+    }
+    
+    
+    func validarDNIExistente(dni: String,idEmpleado: Int) -> Bool {
+        let empleados = obtenerEmpleados()
+        for empleado in empleados {
+
+            if idEmpleado == 0 {
+                if empleado.dni == dni {
+                    return true
+                }
+
+            }else{
+                if empleado.dni == dni && Int(empleado.id) != idEmpleado {
+                    return true
+                }
+            }
+         
+        }
+        return false
+    }
+
+    func validarCorreoExistente(correo: String,idEmpleado: Int) -> Bool {
+        let empleados = obtenerEmpleados()
+        for empleado in empleados {
+            print( idEmpleado,empleado.id)
+                if idEmpleado == 0 {
+                    
+                    if empleado.fk_empleado_usuario?.correo == correo {
+                        
+                        return true
+                    }
+        
+                }else{
+                
+                    if empleado.fk_empleado_usuario?.correo == correo && Int(empleado.id) != idEmpleado {
+                       
+                        return true
+                    }
+                    
+                }
+        }
+        return false
     }
 
 }

@@ -23,7 +23,7 @@ class CategoriaAgregarViewController: UIViewController {
 
     @IBAction func btnAgregar(_ sender: Any) {
         let nombre = txtNombre.text ?? ""
-        let cat = CategoriaPlatoDTO(id: 0, categoria: nombre)
+        var cat = CategoriaPlatoDTO(id: 0, categoria: nombre)
         //VALIDACIONES
         if(nombre.isEmpty){
             Toast(text: "El nombre no debe estar vacío").show()
@@ -48,8 +48,15 @@ class CategoriaAgregarViewController: UIViewController {
                 return
             }
         }
+        
         //registrar
         CategoriaService().registrarCategoria(cat: cat)
+        
+        let idRest = CategoriaService().obtenerUltimoID()
+        
+        cat.id = idRest
+        
+        CategoriaServiceRest().registrarCategoriaRest(categoriaRest: cat)
         Toast(text: "Categoría registrada").show()
         //hacer que llamemos a la notificación creada para refrescar la lista
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)

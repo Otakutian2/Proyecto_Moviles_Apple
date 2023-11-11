@@ -9,6 +9,7 @@ import UIKit
 import Toaster
 import Foundation
 import CoreData
+import Alamofire
 
 class MetodosPagoAgregarViewController: UIViewController {
 
@@ -25,7 +26,7 @@ class MetodosPagoAgregarViewController: UIViewController {
     
     @IBAction func btnNuevoMet(_ sender: Any) {
         let nombre = txtNombreMet.text ?? ""
-        let metodo = MetodoPagoDTO(id: 0, nombreMetodoPago: nombre)
+        var metodo = MetodoPagoDTO(id: 0, nombreMetodoPago: nombre)
         //VALIDACIONES
         if(nombre.isEmpty){
             Toast(text: "El nombre no debe estar vacío").show()
@@ -50,8 +51,17 @@ class MetodosPagoAgregarViewController: UIViewController {
                 return
             }
         }
-        //registrar 
+        //registrar
+        let idRest = MetodoPagoService().obtenerUltimoID()
+        
         MetodoPagoService().registrarMetodoPago(metodo: metodo)
+        
+        metodo.id = idRest
+        
+    
+        MetodoPagoServiceRest().registrarMetodoPagoRest(metodoPago: metodo)
+        
+        
         Toast(text: "Método registrado").show()
         //hacer que llamemos a la notificación creada para refrescar la lista
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
@@ -61,5 +71,8 @@ class MetodosPagoAgregarViewController: UIViewController {
         
         
     }
+    
+    
+    
     
 }

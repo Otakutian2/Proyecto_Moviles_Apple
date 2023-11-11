@@ -1,13 +1,24 @@
 //
-//  UsuarioDTO.swift
+//  EmpleadoDTOREST.swift
 //  ProyectoComanda
 //
-//  Created by Gary on 3/11/23.
+//  Created by Sebastian on 9/11/23.
 //
 
 import UIKit
 
-struct UsuarioDTO  {
+    struct EmpleadoDTOREST: Codable {
+        var id: Int
+        var nombre: String
+        var apellido: String
+        var telefono: String
+        var dni: String
+        var fechaRegistro: String
+        var usuario: UsuarioDTOREST
+        var cargo: CargoDTO
+    }
+    
+struct UsuarioDTOREST : Codable{
     var id: Int
     var correo: String
     var contrasena: String
@@ -26,3 +37,10 @@ struct UsuarioDTO  {
         return contrasenia
     }
 }
+
+
+    struct CargoDTO: Codable {
+    var id: Int
+    var nombre: String
+    }
+

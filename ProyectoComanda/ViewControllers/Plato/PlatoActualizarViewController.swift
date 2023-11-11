@@ -97,10 +97,25 @@ class PlatoActualizarViewController: UIViewController {
         }
         let precio = Double(txtPrecio.text!)
         let categoriaObtenida = CategoriaService().obtenerCategoriaPorNombre(nombre: idCat)
+        
         plato.nombre = nombre
         plato.precioPlato = precio!
         plato.fk_plato_categoria = categoriaObtenida
+        
+        print(plato.fk_plato_categoria = categoriaObtenida)
+        
+        let categoriaRest = CategoriaPlatoDTO(id: Int(plato.fk_plato_categoria!.id), categoria: plato.fk_plato_categoria!.categoria!)
+        
+        print(categoriaRest)
+        
+        
+        let platoRest = PlatoDTOREST(id: Int(plato.id), nombre: plato.nombre!, precioPlato: plato.precioPlato, categoriaPlato: categoriaRest)
+        
+        print(platoRest)
         PlatoService().actualizarPlato(plato: plato)
+        
+        PlatoServiceRest().editarPlatoRest(platoRest: platoRest)
+        
         Toast(text: "Plato actualizado").show()
         //hacer que llamemos a la notificación creada para refrescar la lista
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
@@ -112,7 +127,11 @@ class PlatoActualizarViewController: UIViewController {
     @IBAction func btnEliminar(_ sender: Any) {
         let ventana = UIAlertController(title: "Sistema", message: "¿Seguro de eliminar?", preferredStyle: .alert)
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
+            
+            let id = Int(self.plato.id)
+            
             PlatoService().eliminarPlato(plato: self.plato)
+            PlatoServiceRest().eliminarPlatoRest(id: id)
             NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
             Toast(text: "Plato eliminado").show()
             //VOLVER A LA PESTAÑA ANTERIOR

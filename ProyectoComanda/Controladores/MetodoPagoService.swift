@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 class MetodoPagoService: NSObject {
     func obtenerUltimoID() -> Int {
@@ -76,5 +77,9 @@ class MetodoPagoService: NSObject {
             print(ex.localizedDescription)
         }
     }
+    
+
+    
+    
 
 }

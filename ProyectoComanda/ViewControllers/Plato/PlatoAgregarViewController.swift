@@ -95,9 +95,25 @@ class PlatoAgregarViewController: UIViewController {
             return
         }
         let precio = Double(txtPrecio.text!)
+        
         let categoriaObtenida = CategoriaService().obtenerCategoriaPorNombre(nombre: idCat)
+        
         let plato = PlatoDTO(id: 0, nombre: nombre, precioPlato: precio!, categoria: categoriaObtenida!)
+        
+        let categoriaRest = CategoriaPlatoDTO(id: Int(categoriaObtenida!.id),categoria: categoriaObtenida!.categoria!)
+        
+        print(categoriaRest)
+        
+        var platoRest = PlatoDTOREST(id: 0, nombre: nombre, precioPlato: precio!, categoriaPlato: categoriaRest)
+        
         PlatoService().registrarPlato(plato: plato)
+        
+        let idRest = PlatoService().obtenerUltimoID()
+        
+        platoRest.id = idRest
+        
+        PlatoServiceRest().registrarPlatoRest(platoRest: platoRest)
+        
         Toast(text: "Plato registrado").show()
         //hacer que llamemos a la notificación creada para refrescar la lista
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)

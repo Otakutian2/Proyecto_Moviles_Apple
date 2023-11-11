@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Toaster
 
 class UsuarioService: NSObject {
     func obtenerTamano() -> Int {
@@ -95,5 +96,78 @@ class UsuarioService: NSObject {
             return nil
         }
     }
+    
+    func login(correo: String, password: String) -> Bool {
+        
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        
+        
+        let fetchRequest = NSFetchRequest<Usuario>(entityName: "Usuario")
+        
+        let condicion1 = NSPredicate(format: "correo == %@", correo)
+        let condicion2 = NSPredicate(format: "contrasena == %@", password)
+        
+        let unir = NSCompoundPredicate(andPredicateWithSubpredicates: [condicion1,condicion2])
+        
+        fetchRequest.predicate = unir
+        
+        do {
+            let resultado = try bd.fetch(fetchRequest)
+            
+           return !resultado.isEmpty
+        } catch {
+        
+            print("Error al recuperar datos de inicio de sesi∫n: \(error)")
+            return false
+        }
+        
+    }
+    
+    func cambiarContrasena(correo: String, nuevaContraseña: String, confirmarNuevaContraseña: String) -> Bool {
+        // Validar que los campos no estén vacíos
+        guard !correo.isEmpty, !nuevaContraseña.isEmpty, !confirmarNuevaContraseña.isEmpty else {
+            Toast(text: "Todos los campos son obligatorios").show()
+            return false
+        }
+
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<Usuario>(entityName: "Usuario")
+        fetchRequest.predicate = NSPredicate(format: "correo == %@", correo)
+
+        do {
+            let usuarios = try bd.fetch(fetchRequest)
+
+            guard let usuario = usuarios.first else {
+                // El correo no existe en la base de datos
+                Toast(text: "Correo no encontrado").show()
+                return false
+            }
+
+            // Verificar que la nueva contraseña coincida con la confirmación
+            guard nuevaContraseña == confirmarNuevaContraseña else {
+                // La nueva contraseña y la confirmación no coinciden
+                Toast(text: "La nueva contraseña y la confirmación no coinciden").show()
+                return false
+            }
+
+            // Actualizar la contraseña
+            usuario.contrasena = nuevaContraseña
+
+            // Guardar los cambios en Core Data
+            try bd.save()
+
+            Toast(text: "Contraseña cambiada exitosamente").show()
+            return true
+        } catch {
+            print("Error al cambiar la contraseña: \(error.localizedDescription)")
+            return false
+        }
+    }
+
+
 
 }

@@ -13,6 +13,7 @@ class MetodosPagoActualizarViewController: UIViewController {
     @IBOutlet weak var txtNombreMet: UITextField!
     //VARIABLE QUE RECIBIMOS EN EL SUEGUE
     var metodo: MetodoPago!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //AQUÍ COLOCAMOS LOS VALORES
@@ -22,7 +23,7 @@ class MetodosPagoActualizarViewController: UIViewController {
     
     @IBAction func btnActualizarMet(_ sender: Any) {
         let nombre = txtNombreMet.text ?? ""
-        //VALIDACIONES
+        //VALIDACIONES∫
         if(nombre.isEmpty){
             Toast(text: "El nombre no debe estar vacío").show()
             return
@@ -47,10 +48,18 @@ class MetodosPagoActualizarViewController: UIViewController {
             }
         }
         metodo.nombreMetodoPago = nombre
+    
         MetodoPagoService().actualizarMetodo(metodo: metodo)
+        
+        //Actualizar Rest
+        let metodoPagoRest = MetodoPagoDTO(id:Int(metodo.id), nombreMetodoPago: metodo.nombreMetodoPago!)
+        
+        MetodoPagoServiceRest().editarMetodoPagoRest(metodoPago: metodoPagoRest)
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
         Toast(text: "Método actualizado").show()
         //Con esto volvemos a la pestaña anterior
+        print("Metodo actualizado")
+        
         self.navigationController?.popViewController(animated: true)
         
     }
@@ -58,7 +67,11 @@ class MetodosPagoActualizarViewController: UIViewController {
     @IBAction func btnEliminarMet(_ sender: Any) {
         let ventana = UIAlertController(title: "Sistema", message: "¿Seguro de eliminar?", preferredStyle: .alert)
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
+            let id = Int(self.metodo.id)
+            
             MetodoPagoService().eliminarMetodo(metodo: self.metodo)
+            //Eliminar rest
+            MetodoPagoServiceRest().eliminarMetodoPagoRest(id: id)
             NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
             Toast(text: "Método eliminado").show()
             //VOLVER A LA PESTAÑA ANTERIOR

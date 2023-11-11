@@ -74,8 +74,15 @@
 		4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
+		9E684AAB2AFE85CC00E33029 /* PlatoDTOREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E684AAA2AFE85CC00E33029 /* PlatoDTOREST.swift */; };
+		9E684AAD2AFE865900E33029 /* PlatoServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E684AAC2AFE865900E33029 /* PlatoServiceRest.swift */; };
 		9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */; };
 		9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */; };
+		9E7511962AFCBD3800B82FEA /* MetodoPagoServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7511952AFCBD3800B82FEA /* MetodoPagoServiceRest.swift */; };
+		9E7511982AFCCD4C00B82FEA /* CategoriaServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7511972AFCCD4C00B82FEA /* CategoriaServiceRest.swift */; };
+		9E9177DB2AFD515100EC13C3 /* EmpleadosServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9177DA2AFD515100EC13C3 /* EmpleadosServiceRest.swift */; };
+		9E9177DF2AFD563C00EC13C3 /* EmpleadoDTOREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9177DE2AFD563C00EC13C3 /* EmpleadoDTOREST.swift */; };
+		9EB6C1762AFEE82900AD8A90 /* CambiarContraseñaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6C1752AFEE82900AD8A90 /* CambiarContraseñaViewController.swift */; };
 		DC596E7E2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC596E7D2ACE65EF00B2F5DF /* EmpleadoMantenimientoViewController.swift */; };
 		DC596E802ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC596E7F2ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift */; };
 		E20493F92ACFA0490085CAA7 /* CategoriaListadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20493F82ACFA0490085CAA7 /* CategoriaListadoViewController.swift */; };
@@ -178,8 +185,15 @@
 		4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoDTO.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E684AAA2AFE85CC00E33029 /* PlatoDTOREST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoDTOREST.swift; sourceTree = "<group>"; };
+		9E684AAC2AFE865900E33029 /* PlatoServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoServiceRest.swift; sourceTree = "<group>"; };
 		9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
 		9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
+		9E7511952AFCBD3800B82FEA /* MetodoPagoServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoServiceRest.swift; sourceTree = "<group>"; };
+		9E7511972AFCCD4C00B82FEA /* CategoriaServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaServiceRest.swift; sourceTree = "<group>"; };
+		9E9177DA2AFD515100EC13C3 /* EmpleadosServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadosServiceRest.swift; sourceTree = "<group>"; };
+		9E9177DE2AFD563C00EC13C3 /* EmpleadoDTOREST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoDTOREST.swift; sourceTree = "<group>"; };
+		9EB6C1752AFEE82900AD8A90 /* CambiarContraseñaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CambiarContraseñaViewController.swift"; sourceTree = "<group>"; };
 		A8791B1E27FA802326D7D149 /* Pods-ProyectoComanda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda.release.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda/Pods-ProyectoComanda.release.xcconfig"; sourceTree = "<group>"; };
 		B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda_ProyectoComandaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AB82E397EE04E0119EED18 /* Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComanda-ProyectoComandaUITests/Pods-ProyectoComanda-ProyectoComandaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +323,10 @@
 				4E6953CA2AF6F4F100511B25 /* EmpleadoService.swift */,
 				4E6953CC2AF6F4FF00511B25 /* UsuarioService.swift */,
 				4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */,
+				9E7511952AFCBD3800B82FEA /* MetodoPagoServiceRest.swift */,
+				9E7511972AFCCD4C00B82FEA /* CategoriaServiceRest.swift */,
+				9E9177DA2AFD515100EC13C3 /* EmpleadosServiceRest.swift */,
+				9E684AAC2AFE865900E33029 /* PlatoServiceRest.swift */,
 			);
 			path = Controladores;
 			sourceTree = "<group>";
@@ -385,6 +403,7 @@
 				9E6C79842ACD27EF002C1E5A /* ConfiguracionViewController.swift */,
 				4E5465912AE06DAD00492ADC /* CajaReporteViewController.swift */,
 				4E5465932AE06DDD00492ADC /* FacturarViewController.swift */,
+				9EB6C1752AFEE82900AD8A90 /* CambiarContraseñaViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -437,6 +456,8 @@
 				4E5A84312AE9CA2B002EE753 /* PlatoDTO.swift */,
 				4E56C44F2AF5DC4100B414D7 /* EmpleadoDTO.swift */,
 				4E56C4512AF5DC4E00B414D7 /* UsuarioDTO.swift */,
+				9E9177DE2AFD563C00EC13C3 /* EmpleadoDTOREST.swift */,
+				9E684AAA2AFE85CC00E33029 /* PlatoDTOREST.swift */,
 			);
 			path = Dtos;
 			sourceTree = "<group>";
@@ -700,23 +721,29 @@
 				4E56C46D2AF5DDE400B414D7 /* Comanda+CoreDataClass.swift in Sources */,
 				9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */,
 				4E56C4742AF5DDE400B414D7 /* Empleado+CoreDataProperties.swift in Sources */,
+				9E7511982AFCCD4C00B82FEA /* CategoriaServiceRest.swift in Sources */,
 				4E56C4722AF5DDE400B414D7 /* MetodoPago+CoreDataProperties.swift in Sources */,
 				4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */,
 				4E56C4712AF5DDE400B414D7 /* MetodoPago+CoreDataClass.swift in Sources */,
 				4E56C4792AF5DDE400B414D7 /* DetalleComanda+CoreDataClass.swift in Sources */,
 				4E16DD072AE73556004A505A /* ProyectoComanda.xcdatamodeld in Sources */,
 				4E54743F2AC88C5900BB0BD6 /* EstablecimientoViewController.swift in Sources */,
+				9EB6C1762AFEE82900AD8A90 /* CambiarContraseñaViewController.swift in Sources */,
 				4E5465922AE06DAD00492ADC /* CajaReporteViewController.swift in Sources */,
 				4E56C4732AF5DDE400B414D7 /* Empleado+CoreDataClass.swift in Sources */,
 				4E56C46E2AF5DDE400B414D7 /* Comanda+CoreDataProperties.swift in Sources */,
 				E26EEB322ACF8824003A69F0 /* MesaActualizarViewController.swift in Sources */,
+				9E7511962AFCBD3800B82FEA /* MetodoPagoServiceRest.swift in Sources */,
 				E26EEB302ACF876A003A69F0 /* MesaAgregarViewController.swift in Sources */,
 				E20493FD2ACFA0850085CAA7 /* CategoriaModificarViewController.swift in Sources */,
 				4E56C4762AF5DDE400B414D7 /* TipoComprobante+CoreDataProperties.swift in Sources */,
 				E20493FB2ACFA06B0085CAA7 /* CategoriaAgregarViewController.swift in Sources */,
 				4E56C4842AF5DDE400B414D7 /* Plato+CoreDataProperties.swift in Sources */,
+				9E684AAB2AFE85CC00E33029 /* PlatoDTOREST.swift in Sources */,
 				4E56C4522AF5DC4E00B414D7 /* UsuarioDTO.swift in Sources */,
+				9E9177DB2AFD515100EC13C3 /* EmpleadosServiceRest.swift in Sources */,
 				E20493F92ACFA0490085CAA7 /* CategoriaListadoViewController.swift in Sources */,
+				9E684AAD2AFE865900E33029 /* PlatoServiceRest.swift in Sources */,
 				4E16DD042AE733F5004A505A /* MetodoPagoTableViewCell.swift in Sources */,
 				4E56C4772AF5DDE400B414D7 /* Usuario+CoreDataClass.swift in Sources */,
 				E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */,
@@ -758,6 +785,7 @@
 				DC596E802ACE6B1300B2F5DF /* EmpleadoDetalleViewControler.swift in Sources */,
 				4E6953C92AF6F4E200511B25 /* CargoService.swift in Sources */,
 				4E56C4862AF5DDE400B414D7 /* Caja+CoreDataProperties.swift in Sources */,
+				9E9177DF2AFD563C00EC13C3 /* EmpleadoDTOREST.swift in Sources */,
 				4E5A84362AE9CAA1002EE753 /* PlatoService.swift in Sources */,
 				4E56C4502AF5DC4100B414D7 /* EmpleadoDTO.swift in Sources */,
 				4E5474102AC8825400BB0BD6 /* SceneDelegate.swift in Sources */,

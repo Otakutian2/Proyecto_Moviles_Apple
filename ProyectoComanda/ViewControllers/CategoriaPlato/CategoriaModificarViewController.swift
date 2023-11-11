@@ -45,8 +45,15 @@ class CategoriaModificarViewController: UIViewController {
                 return
             }
         }
+        
+       
+        
         categoria.categoria = nombre
+        
+        let categoriaDTO = CategoriaPlatoDTO(id: Int(categoria.id), categoria: categoria.categoria! )
+        
         CategoriaService().actualizarCategoria(cat: categoria)
+        CategoriaServiceRest().editarMetodoPagoRest(categoriaRest:  categoriaDTO)
         NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
 
         Toast(text: "Categoría actualizada").show()
@@ -59,7 +66,11 @@ class CategoriaModificarViewController: UIViewController {
         let ventana = UIAlertController(title: "Sistema", message: "¿Seguro de eliminar?", preferredStyle: .alert)
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
             if self.categoria.fk_categoria_plato?.count == 0 {
+                let id = Int(self.categoria.id)
+                
+                
                 CategoriaService().eliminarCategoria(cat: self.categoria)
+                CategoriaServiceRest().eliminarCategoriaRest(id: id)
                 NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
                 Toast(text: "Categoría eliminada eliminado").show()
                 //VOLVER A LA PESTAÑA ANTERIOR

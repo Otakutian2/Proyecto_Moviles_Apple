@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct CategoriaPlatoDTO {
+struct CategoriaPlatoDTO : Codable{
     var id : Int
     var categoria : String
 }

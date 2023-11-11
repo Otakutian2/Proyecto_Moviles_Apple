@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct MetodoPagoDTO {
+struct MetodoPagoDTO :Codable{
     var id: Int
     var nombreMetodoPago: String
 

@@ -16,7 +16,5 @@ struct EmpleadoDTO {
     var fechaRegistro: String
     var Usuario : Usuario
     var Cargo : Cargo
-    
-    
-    
+
 }
