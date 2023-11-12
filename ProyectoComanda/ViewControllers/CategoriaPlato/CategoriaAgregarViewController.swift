@@ -48,11 +48,11 @@ class CategoriaAgregarViewController: UIViewController {
                 return
             }
         }
-        
+        let idRest = CategoriaService().obtenerUltimoID()
+
         //registrar
         CategoriaService().registrarCategoria(cat: cat)
         
-        let idRest = CategoriaService().obtenerUltimoID()
         
         cat.id = idRest
         

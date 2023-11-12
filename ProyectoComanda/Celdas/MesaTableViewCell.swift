@@ -9,6 +9,9 @@ import UIKit
 
 class MesaTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblAsientos: UILabel!
+    @IBOutlet weak var lblEstado: UILabel!
+    @IBOutlet weak var lblCodigo: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

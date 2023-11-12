@@ -111,7 +111,7 @@ class EmpleadoDetalleViewControler: UIViewController {
         
         
         empleadoDTOREST.id = idRest
-        
+        print(String(usuarioDTO.contrasena))
         print(idRest)
         
         EmpleadosServiceRest().registrarEmpleadoRest(empleadoRest: empleadoDTOREST)

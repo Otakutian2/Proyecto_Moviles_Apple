@@ -71,6 +71,9 @@
 		4E6953CF2AF6F51F00511B25 /* EstadoComandaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */; };
 		4E6953D22AF701A100511B25 /* EmpleadoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953D12AF701A100511B25 /* EmpleadoTableViewCell.swift */; };
 		4E6953D42AF701B300511B25 /* MesaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953D32AF701B300511B25 /* MesaTableViewCell.swift */; };
+		4E6CDCC82B004E470064D8B1 /* MesaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6CDCC72B004E470064D8B1 /* MesaService.swift */; };
+		4E6CDCCA2B004EAE0064D8B1 /* MesaDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6CDCC92B004EAE0064D8B1 /* MesaDTO.swift */; };
+		4E6CDCCD2B0050980064D8B1 /* MesaServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6CDCCC2B0050980064D8B1 /* MesaServiceRest.swift */; };
 		4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
@@ -182,6 +185,9 @@
 		4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoComandaService.swift; sourceTree = "<group>"; };
 		4E6953D12AF701A100511B25 /* EmpleadoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoTableViewCell.swift; sourceTree = "<group>"; };
 		4E6953D32AF701B300511B25 /* MesaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaTableViewCell.swift; sourceTree = "<group>"; };
+		4E6CDCC72B004E470064D8B1 /* MesaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaService.swift; sourceTree = "<group>"; };
+		4E6CDCC92B004EAE0064D8B1 /* MesaDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaDTO.swift; sourceTree = "<group>"; };
+		4E6CDCCC2B0050980064D8B1 /* MesaServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaServiceRest.swift; sourceTree = "<group>"; };
 		4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoDTO.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 		4E16DD0D2AE73718004A505A /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				4E6CDCCB2B0050820064D8B1 /* REST */,
 				4E16DD0E2AE73740004A505A /* MetodoPagoService.swift */,
 				4E5A84332AE9CA91002EE753 /* CategoriaService.swift */,
 				4E5A84352AE9CAA1002EE753 /* PlatoService.swift */,
@@ -327,6 +334,7 @@
 				9E7511972AFCCD4C00B82FEA /* CategoriaServiceRest.swift */,
 				9E9177DA2AFD515100EC13C3 /* EmpleadosServiceRest.swift */,
 				9E684AAC2AFE865900E33029 /* PlatoServiceRest.swift */,
+				4E6CDCC72B004E470064D8B1 /* MesaService.swift */,
 			);
 			path = Controladores;
 			sourceTree = "<group>";
@@ -448,6 +456,14 @@
 			path = Empleados;
 			sourceTree = "<group>";
 		};
+		4E6CDCCB2B0050820064D8B1 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				4E6CDCCC2B0050980064D8B1 /* MesaServiceRest.swift */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
 		4E6DF02C2AE73FD300DE7D52 /* Dtos */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +474,7 @@
 				4E56C4512AF5DC4E00B414D7 /* UsuarioDTO.swift */,
 				9E9177DE2AFD563C00EC13C3 /* EmpleadoDTOREST.swift */,
 				9E684AAA2AFE85CC00E33029 /* PlatoDTOREST.swift */,
+				4E6CDCC92B004EAE0064D8B1 /* MesaDTO.swift */,
 			);
 			path = Dtos;
 			sourceTree = "<group>";
@@ -712,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5465942AE06DDD00492ADC /* FacturarViewController.swift in Sources */,
+				4E6CDCC82B004E470064D8B1 /* MesaService.swift in Sources */,
 				4E16DD0F2AE73740004A505A /* MetodoPagoService.swift in Sources */,
 				4E5474122AC8825400BB0BD6 /* ViewController.swift in Sources */,
 				4E5A84402AE9CD38002EE753 /* CategoriaPlatoTableViewCell.swift in Sources */,
@@ -747,10 +765,12 @@
 				4E16DD042AE733F5004A505A /* MetodoPagoTableViewCell.swift in Sources */,
 				4E56C4772AF5DDE400B414D7 /* Usuario+CoreDataClass.swift in Sources */,
 				E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */,
+				4E6CDCCA2B004EAE0064D8B1 /* MesaDTO.swift in Sources */,
 				4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */,
 				4E6953C32AF6E85000511B25 /* EstablecimientoService.swift in Sources */,
 				E29133702AE04EDB009E84B9 /* PlatoActualizarViewController.swift in Sources */,
 				4E6953D22AF701A100511B25 /* EmpleadoTableViewCell.swift in Sources */,
+				4E6CDCCD2B0050980064D8B1 /* MesaServiceRest.swift in Sources */,
 				4E56C4702AF5DDE400B414D7 /* Cargo+CoreDataProperties.swift in Sources */,
 				4E56C46F2AF5DDE400B414D7 /* Cargo+CoreDataClass.swift in Sources */,
 				4E56C4822AF5DDE400B414D7 /* EstadoComanda+CoreDataProperties.swift in Sources */,
