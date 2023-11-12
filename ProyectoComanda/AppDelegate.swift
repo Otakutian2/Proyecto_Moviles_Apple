@@ -30,11 +30,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if EstablecimientoService().obtenerTamano() == 0 {
             let establecimiento = Establecimiento(context: context)
             establecimiento.id = 1
-            establecimiento.nomEstablecimiento = "Ejemplo"
-            establecimiento.rucestablecimiento = "123"
-            establecimiento.telefonoEstablecimiento = "000"
-            establecimiento.direccionestablecimiento = "SADA"
+            establecimiento.nomEstablecimiento = "Sanguchería Wong"
+            establecimiento.rucestablecimiento = "20217382809"
+            establecimiento.telefonoEstablecimiento = "942850902"
+            establecimiento.direccionestablecimiento = "Av.Izaguirre"
         }
+        if MetodoPagoService().obtenerTamano() == 0 {
+            let metodo1 = MetodoPago(context: context)
+            metodo1.id = 1
+            metodo1.nombreMetodoPago = "En Efectivo"
+            
+            let metodo2 = MetodoPago(context: context)
+            metodo2.id = 2
+            metodo2.nombreMetodoPago = "BCP"
+            
+            let metodo3 = MetodoPago(context: context)
+            metodo3.id = 3
+            metodo3.nombreMetodoPago = "BBVA"
+            
+            let metodo4 = MetodoPago(context: context)
+            metodo4.id = 4
+            metodo4.nombreMetodoPago = "Scotiabank"
+            
+            let metodo5 = MetodoPago(context: context)
+            metodo5.id = 5
+            metodo5.nombreMetodoPago = "Interbank"
+        }
+        
         if CargoService().obtenerTamano() == 0 {
             let cargo1 = Cargo(context: context)
             cargo1.id = 1
@@ -92,7 +114,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let ex as NSError {
             print(ex.localizedDescription)
         }
-        
+        if CajaService().obtenerTamano() == 0 {
+            let caja = Caja(context: context)
+            let esta = EstablecimientoService().obtenerEstablecimiento()
+            caja.id = 1
+            caja.fk_caja_establecimiento = esta
+        }
         
         if EmpleadoService().obtenerTamano() == 0 {
             //LISTA DE CARGOS Y USUARIOS PARA INSTANCIAR

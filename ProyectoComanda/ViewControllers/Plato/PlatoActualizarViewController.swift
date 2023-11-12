@@ -15,7 +15,7 @@ class PlatoActualizarViewController: UIViewController {
     
     var plato : Plato!
     var combo = DropDown()
-    var idCat = ""
+    var idCat = "Seleccionar"
     
     @IBOutlet weak var btnCategoria: UIButton!
     @IBOutlet weak var txtPrecio: UITextField!

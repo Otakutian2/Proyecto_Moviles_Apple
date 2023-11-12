@@ -71,6 +71,8 @@ class EstablecimientoViewController: UIViewController {
         esta.rucestablecimiento = ruc
         esta.direccionestablecimiento = direccion
         EstablecimientoService().actualizarEstablecimiento(establecimiento: esta)
+        let estaDTO = EstablecimientoDTO(id: 1, nomEstablecimiento: esta.nomEstablecimiento!, telefonoestablecimiento: esta.telefonoEstablecimiento!, direccionestablecimiento: esta.direccionestablecimiento!, rucestablecimiento: esta.rucestablecimiento!)
+        EstablecimientoServiceRest().editarEstablecimientoRest(establecimiento: estaDTO)
         Toast(text: "Establecimiento actualizado").show()
         actualizarForm()
         

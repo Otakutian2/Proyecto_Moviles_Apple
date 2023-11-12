@@ -19,7 +19,7 @@ class PlatoAgregarViewController: UIViewController {
     @IBOutlet weak var txtPrecio: UITextField!
     
     var combo = DropDown()
-    var idCat = ""
+    var idCat = "Seleccionar"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -105,10 +105,10 @@ class PlatoAgregarViewController: UIViewController {
         print(categoriaRest)
         
         var platoRest = PlatoDTOREST(id: 0, nombre: nombre, precioPlato: precio!, categoriaPlato: categoriaRest)
-        
+        let idRest = PlatoService().obtenerUltimoID()
+
         PlatoService().registrarPlato(plato: plato)
         
-        let idRest = PlatoService().obtenerUltimoID()
         
         platoRest.id = idRest
         

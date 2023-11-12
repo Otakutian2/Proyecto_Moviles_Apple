@@ -43,6 +43,11 @@ class MetodoPagoService: NSObject {
         return arreglo
     }
     
+    func obtenerTamano() -> Int {
+        let lista = listadoMetodos()
+        return lista.count
+    }
+    
     func registrarMetodoPago(metodo: MetodoPagoDTO){
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let bd = delegate.persistentContainer.viewContext
