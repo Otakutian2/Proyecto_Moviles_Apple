@@ -18,4 +18,5 @@ target 'ProyectoComanda' do
 pod 'DropDown'
 pod 'Toaster'
 pod 'Alamofire'
+pod 'Firebase/Firestore'
 end

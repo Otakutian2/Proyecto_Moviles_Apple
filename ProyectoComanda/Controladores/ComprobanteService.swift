@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import FirebaseFirestore
 import CoreData
 
 class ComprobanteService: NSObject {
@@ -73,4 +75,47 @@ class ComprobanteService: NSObject {
     
 
 }
+    func registrarComprobanteRest(cdp: ComprobanteDTORest){
+        AF.request("https://sistema-restaurante-rest.onrender.com/configuracion/comprobante/registrar",
+                   method: HTTPMethod.post,
+                   parameters: cdp,
+                   encoder: JSONParameterEncoder.default).response(
+            completionHandler:{
+                respuesta in
+                switch respuesta.result {
+                case .success(_):
+                        print("Se genero el codigo del comprobante: "+String(cdp.id))
+                
+                case .failure(let error):
+                    print(error.errorDescription ?? "Hubo error al momento de hacer la peticion")
+                }
+            }
+        )
+        
+    }
+    func registrarCDPFirebase(cdp : ComprobanteDTORest){
+        let bd = Firestore.firestore()
+        let id = UUID().uuidString
+        bd.collection("Comprobante").document(id).setData([
+            "fechaEmision": cdp.fechaEmision,
+            "precioTotalPedido": cdp.precioTotalPedido,
+            "igv": cdp.igv,
+            "subTotal": cdp.subTotal,
+            "descuento": cdp.descuento,
+            "nombreCliente": cdp.nombreCliente,
+            "metodoPago": cdp.metodoPago,
+            "tipoComprobante": cdp.tipoComprobante,
+            "empleado": cdp.empleado,
+            "comanda": cdp.comanda,
+            "caja": cdp.caja
+        ]){ error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                print("Comprobante registrado")
+                
+            }
+        }
+    }
+    
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ComandaDTO {
+struct ComandaDTO  {
 
     var id :Int
     var cantidadAsientos: Int

@@ -2,7 +2,7 @@
 //  Comanda+CoreDataProperties.swift
 //  ProyectoComanda
 //
-//  Created by Gary on 3/11/23.
+//  Created by Gary on 2/12/23.
 //
 //
 
@@ -16,15 +16,14 @@ extension Comanda {
         return NSFetchRequest<Comanda>(entityName: "Comanda")
     }
 
-    @NSManaged public var id: Int16
     @NSManaged public var cantidadAsientos: Int16
-    @NSManaged public var precioTotal: Double
     @NSManaged public var fechaEmision: String?
-    @NSManaged public var fk_comanda_mesa: Mesa?
-    @NSManaged public var fk_comanda_estado: EstadoComanda?
-    @NSManaged public var fk_comanda_wempleado: Empleado?
+    @NSManaged public var id: Int16
+    @NSManaged public var precioTotal: Double
     @NSManaged public var fk_comanda_detalleComanda: NSSet?
-    @NSManaged public var fk_comanda_comprobante: Comprobante?
+    @NSManaged public var fk_comanda_empleado: Empleado?
+    @NSManaged public var fk_comanda_estado: EstadoComanda?
+    @NSManaged public var fk_comanda_mesa: Mesa?
 
 }
 

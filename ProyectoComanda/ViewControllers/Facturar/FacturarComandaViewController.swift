@@ -218,8 +218,32 @@ class FacturarComandaViewController: UIViewController {
             
             let comprobanteDto = ComprobanteDTO(id: 0, fechaEmision: fechaActualString, precioTotalPedido: total!, igv: igv!, subTotal: subTotal!, descuento: descuento!, nombreCliente: cliente, fk_CDP_tipocdp: comprobante, fk_cdp_caja: caja, fk_cdp_comanda: comanda, fk_cdp_metodo: metodoPago, fk_cdp_empleado: empleado)
             
+            let usuarioDTO = UsuarioDTOREST(id: Int(empleado!.fk_empleado_usuario!.id), correo: empleado!.fk_empleado_usuario!.correo!, contrasena: empleado!.fk_empleado_usuario!.contrasena!)
+            
+            let cargoDTO = CargoDTO(id: Int(empleado!.fk_empleado_cargo!.id), nombre: empleado!.fk_empleado_cargo!.nombre!)
+            
+            let empleadoDTO = EmpleadoDTOREST(id: Int(empleado!.id), nombre: empleado!.nombre!, apellido: empleado!.apellido!, telefono: empleado!.telefono!, dni: empleado!.dni!, fechaRegistro: empleado!.fechaRegistro!, usuario: usuarioDTO, cargo: cargoDTO)
+            let tipoComprobanteDTO = TipoComprobanteDTO(id: Int(comprobante!.id), tipo: comprobante!.tipo!)
+            let metDTO = MetodoPagoDTO(id: Int(metodoPago!.id), nombreMetodoPago: metodoPago!.nombreMetodoPago!)
+            
+            let establecimientodDTO = EstablecimientoDTO(id: Int(caja!.fk_caja_establecimiento!.id), nomEstablecimiento: caja!.fk_caja_establecimiento!.nomEstablecimiento!, telefonoestablecimiento: caja!.fk_caja_establecimiento!.telefonoEstablecimiento!, direccionestablecimiento: caja!.fk_caja_establecimiento!.direccionestablecimiento!, rucestablecimiento: caja!.fk_caja_establecimiento!.rucestablecimiento!)
+            
+            let cajaDTO = CajaDTO(id: Int(caja!.id), Establecimiento: establecimientodDTO)
+            
+    
+            let mesaDTO = MesaDTO(id: Int(comanda!.fk_comanda_mesa!.id), estado: comanda!.fk_comanda_mesa!.estado!, cantidadAsientos: Int(comanda!.fk_comanda_mesa!.cantidadAsientos))
+            
+            let estadoDTO = EstadoComandaDTO(id: Int(comanda!.fk_comanda_estado!.id), estado: comanda!.fk_comanda_estado!.estado!)
+            
+            let comandaDTO = ComandaDTORest(id: Int(comanda!.id), cantidadAsientos: Int(comanda!.cantidadAsientos), precioTotal: comanda!.precioTotal, fechaEmision: comanda!.fechaEmision!, mesa: mesaDTO, estadoComanda: estadoDTO, empleado: empleadoDTO)
+            
+            let comprobanteDtoRest = ComprobanteDTORest(id: 0, fechaEmision: fechaActualString, precioTotalPedido: total!, igv: igv!, subTotal: subTotal!, descuento: descuento!, nombreCliente: cliente, metodoPago: metDTO, tipoComprobante: tipoComprobanteDTO, empleado: empleadoDTO, comanda: comandaDTO, caja: cajaDTO)
+            
             ComprobanteService().registrarComprobante(comprobante: comprobanteDto)
-        
+            ComprobanteService().registrarComprobanteRest(cdp: comprobanteDtoRest)
+            ComprobanteService().registrarCDPFirebase(cdp: comprobanteDtoRest)
+            
+            
             if let obtenerMesaporIdComanda = comanda.fk_comanda_mesa?.id {
                 let mesa = MesaService().obtenerMesaPorId(id: Int16(obtenerMesaporIdComanda))
                 MesaService().actualizarEstadoMesa(id: mesa!.id, nuevoEstado: "Libre")
@@ -248,7 +272,6 @@ class FacturarComandaViewController: UIViewController {
 
             
 
-            
             
             
             

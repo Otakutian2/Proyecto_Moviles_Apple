@@ -7,6 +7,7 @@
 
 import UIKit
 
-class EstadoComandaDTO: NSObject {
-
+struct EstadoComandaDTO: Codable {
+    var id : Int
+    var estado : String
 }

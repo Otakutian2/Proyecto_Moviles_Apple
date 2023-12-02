@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseCore
 
 	@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -181,11 +182,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let ex as NSError {
             print(ex.localizedDescription)
         }
-        
-        
-    
-        
-        
+        FirebaseApp.configure()
         return true
     }
 

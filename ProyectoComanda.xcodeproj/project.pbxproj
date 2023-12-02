@@ -67,6 +67,15 @@
 		4E6953CF2AF6F51F00511B25 /* EstadoComandaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */; };
 		4E6953D22AF701A100511B25 /* EmpleadoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953D12AF701A100511B25 /* EmpleadoTableViewCell.swift */; };
 		4E6953D42AF701B300511B25 /* MesaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6953D32AF701B300511B25 /* MesaTableViewCell.swift */; };
+		4E6C960E2B1BB07100748072 /* DetalleComanda+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C960C2B1BB07100748072 /* DetalleComanda+CoreDataClass.swift */; };
+		4E6C960F2B1BB07100748072 /* DetalleComanda+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C960D2B1BB07100748072 /* DetalleComanda+CoreDataProperties.swift */; };
+		4E6C96122B1BB0CD00748072 /* Comanda+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C96102B1BB0CD00748072 /* Comanda+CoreDataClass.swift */; };
+		4E6C96132B1BB0CD00748072 /* Comanda+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C96112B1BB0CD00748072 /* Comanda+CoreDataProperties.swift */; };
+		4E6C96182B1BB21B00748072 /* ComprobanteDTORest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C96172B1BB21B00748072 /* ComprobanteDTORest.swift */; };
+		4E6C961A2B1BB2B300748072 /* TipoComprobanteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C96192B1BB2B300748072 /* TipoComprobanteDTO.swift */; };
+		4E6C961C2B1BB32D00748072 /* CajaDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C961B2B1BB32D00748072 /* CajaDTO.swift */; };
+		4E6C961E2B1BC07100748072 /* ComandaDTORest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C961D2B1BC07100748072 /* ComandaDTORest.swift */; };
+		4E6C96202B1BC68800748072 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6C961F2B1BC68800748072 /* GoogleService-Info.plist */; };
 		4E6CDCC82B004E470064D8B1 /* MesaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6CDCC72B004E470064D8B1 /* MesaService.swift */; };
 		4E6CDCCA2B004EAE0064D8B1 /* MesaDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6CDCC92B004EAE0064D8B1 /* MesaDTO.swift */; };
 		4E6CDCCD2B0050980064D8B1 /* MesaServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6CDCCC2B0050980064D8B1 /* MesaServiceRest.swift */; };
@@ -76,8 +85,6 @@
 		4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */; };
 		626E1686243978E337FAA11B /* Pods_ProyectoComandaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2BF22B606D334B91E6481 /* Pods_ProyectoComandaTests.framework */; };
 		75A25C99E2567FECEACA7638 /* Pods_ProyectoComanda_ProyectoComandaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F71E62D5893383634042FD /* Pods_ProyectoComanda_ProyectoComandaUITests.framework */; };
-		9E6771082B10612F0066449E /* Comanda+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6771072B10612F0066449E /* Comanda+CoreDataProperties.swift */; };
-		9E67710A2B1061320066449E /* Comanda+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6771092B1061320066449E /* Comanda+CoreDataClass.swift */; };
 		9E684AAB2AFE85CC00E33029 /* PlatoDTOREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E684AAA2AFE85CC00E33029 /* PlatoDTOREST.swift */; };
 		9E684AAD2AFE865900E33029 /* PlatoServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E684AAC2AFE865900E33029 /* PlatoServiceRest.swift */; };
 		9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */; };
@@ -90,8 +97,6 @@
 		9E6E53522B102DFF004B7590 /* EstadoComandaDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E53512B102DFF004B7590 /* EstadoComandaDTO.swift */; };
 		9E6E53542B102F5F004B7590 /* DetalleComandaDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E53532B102F5F004B7590 /* DetalleComandaDTO.swift */; };
 		9E6E53562B103647004B7590 /* ComandaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E53552B103647004B7590 /* ComandaService.swift */; };
-		9E6FBB802B183EB70087A533 /* DetalleComanda+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FBB7F2B183EB70087A533 /* DetalleComanda+CoreDataProperties.swift */; };
-		9E6FBB822B183EBA0087A533 /* DetalleComanda+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FBB812B183EBA0087A533 /* DetalleComanda+CoreDataClass.swift */; };
 		9E7489562B1A5ADB00F3568C /* FacturarComandaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7489552B1A5ADB00F3568C /* FacturarComandaViewController.swift */; };
 		9E7511962AFCBD3800B82FEA /* MetodoPagoServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7511952AFCBD3800B82FEA /* MetodoPagoServiceRest.swift */; };
 		9E7511982AFCCD4C00B82FEA /* CategoriaServiceRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7511972AFCCD4C00B82FEA /* CategoriaServiceRest.swift */; };
@@ -202,6 +207,15 @@
 		4E6953CE2AF6F51F00511B25 /* EstadoComandaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoComandaService.swift; sourceTree = "<group>"; };
 		4E6953D12AF701A100511B25 /* EmpleadoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpleadoTableViewCell.swift; sourceTree = "<group>"; };
 		4E6953D32AF701B300511B25 /* MesaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaTableViewCell.swift; sourceTree = "<group>"; };
+		4E6C960C2B1BB07100748072 /* DetalleComanda+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetalleComanda+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4E6C960D2B1BB07100748072 /* DetalleComanda+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetalleComanda+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4E6C96102B1BB0CD00748072 /* Comanda+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comanda+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4E6C96112B1BB0CD00748072 /* Comanda+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comanda+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		4E6C96172B1BB21B00748072 /* ComprobanteDTORest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprobanteDTORest.swift; sourceTree = "<group>"; };
+		4E6C96192B1BB2B300748072 /* TipoComprobanteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoComprobanteDTO.swift; sourceTree = "<group>"; };
+		4E6C961B2B1BB32D00748072 /* CajaDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CajaDTO.swift; sourceTree = "<group>"; };
+		4E6C961D2B1BC07100748072 /* ComandaDTORest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandaDTORest.swift; sourceTree = "<group>"; };
+		4E6C961F2B1BC68800748072 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E6CDCC72B004E470064D8B1 /* MesaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaService.swift; sourceTree = "<group>"; };
 		4E6CDCC92B004EAE0064D8B1 /* MesaDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaDTO.swift; sourceTree = "<group>"; };
 		4E6CDCCC2B0050980064D8B1 /* MesaServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaServiceRest.swift; sourceTree = "<group>"; };
@@ -211,8 +225,6 @@
 		4E6DF02D2AE73FED00DE7D52 /* MetodoPagoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoDTO.swift; sourceTree = "<group>"; };
 		7021FE36831A8CE0BE18007D /* Pods_ProyectoComanda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProyectoComanda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B961AD92940524FDD9888DE /* Pods-ProyectoComandaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProyectoComandaTests.debug.xcconfig"; path = "Target Support Files/Pods-ProyectoComandaTests/Pods-ProyectoComandaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9E6771072B10612F0066449E /* Comanda+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Comanda+CoreDataProperties.swift"; path = "/Users/sebastian/Documents/AvanceProyecto_21:11:2023/Sin título/ProyectoComanda/Entidades/Comanda+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		9E6771092B1061320066449E /* Comanda+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Comanda+CoreDataClass.swift"; path = "/Users/sebastian/Documents/AvanceProyecto_21:11:2023/Sin título/ProyectoComanda/Entidades/Comanda+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		9E684AAA2AFE85CC00E33029 /* PlatoDTOREST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoDTOREST.swift; sourceTree = "<group>"; };
 		9E684AAC2AFE865900E33029 /* PlatoServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoServiceRest.swift; sourceTree = "<group>"; };
 		9E6C79822ACD279F002C1E5A /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
@@ -225,8 +237,6 @@
 		9E6E53512B102DFF004B7590 /* EstadoComandaDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadoComandaDTO.swift; sourceTree = "<group>"; };
 		9E6E53532B102F5F004B7590 /* DetalleComandaDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleComandaDTO.swift; sourceTree = "<group>"; };
 		9E6E53552B103647004B7590 /* ComandaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandaService.swift; sourceTree = "<group>"; };
-		9E6FBB7F2B183EB70087A533 /* DetalleComanda+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DetalleComanda+CoreDataProperties.swift"; path = "/Users/sebastian/Documents/AvanceProyecto_21:11:2023/Sin título/ProyectoComanda/Entidades/DetalleComanda+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		9E6FBB812B183EBA0087A533 /* DetalleComanda+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DetalleComanda+CoreDataClass.swift"; path = "/Users/sebastian/Documents/AvanceProyecto_21:11:2023/Sin título/ProyectoComanda/Entidades/DetalleComanda+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		9E7489552B1A5ADB00F3568C /* FacturarComandaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacturarComandaViewController.swift; sourceTree = "<group>"; };
 		9E7511952AFCBD3800B82FEA /* MetodoPagoServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodoPagoServiceRest.swift; sourceTree = "<group>"; };
 		9E7511972AFCCD4C00B82FEA /* CategoriaServiceRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaServiceRest.swift; sourceTree = "<group>"; };
@@ -331,10 +341,10 @@
 		4E16DD082AE735D5004A505A /* Entidades */ = {
 			isa = PBXGroup;
 			children = (
-				9E6FBB812B183EBA0087A533 /* DetalleComanda+CoreDataClass.swift */,
-				9E6FBB7F2B183EB70087A533 /* DetalleComanda+CoreDataProperties.swift */,
-				9E6771092B1061320066449E /* Comanda+CoreDataClass.swift */,
-				9E6771072B10612F0066449E /* Comanda+CoreDataProperties.swift */,
+				4E6C96102B1BB0CD00748072 /* Comanda+CoreDataClass.swift */,
+				4E6C96112B1BB0CD00748072 /* Comanda+CoreDataProperties.swift */,
+				4E6C960C2B1BB07100748072 /* DetalleComanda+CoreDataClass.swift */,
+				4E6C960D2B1BB07100748072 /* DetalleComanda+CoreDataProperties.swift */,
 				4E6953C42AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift */,
 				4E6953C52AF6EB9700511B25 /* Establecimiento+CoreDataProperties.swift */,
 				4E56C4552AF5DDE400B414D7 /* Cargo+CoreDataClass.swift */,
@@ -414,6 +424,7 @@
 		4E54740C2AC8825400BB0BD6 /* ProyectoComanda */ = {
 			isa = PBXGroup;
 			children = (
+				4E6C961F2B1BC68800748072 /* GoogleService-Info.plist */,
 				4E6DF02C2AE73FD300DE7D52 /* Dtos */,
 				4E16DD0D2AE73718004A505A /* Controladores */,
 				4E16DD082AE735D5004A505A /* Entidades */,
@@ -533,6 +544,10 @@
 				9E6E534F2B102DDE004B7590 /* ComprobanteDTO.swift */,
 				9E6E53512B102DFF004B7590 /* EstadoComandaDTO.swift */,
 				9E6E53532B102F5F004B7590 /* DetalleComandaDTO.swift */,
+				4E6C96172B1BB21B00748072 /* ComprobanteDTORest.swift */,
+				4E6C96192B1BB2B300748072 /* TipoComprobanteDTO.swift */,
+				4E6C961B2B1BB32D00748072 /* CajaDTO.swift */,
+				4E6C961D2B1BC07100748072 /* ComandaDTORest.swift */,
 			);
 			path = Dtos;
 			sourceTree = "<group>";
@@ -686,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E54741A2AC8825700BB0BD6 /* LaunchScreen.storyboard in Resources */,
+				4E6C96202B1BC68800748072 /* GoogleService-Info.plist in Resources */,
 				4E5474172AC8825700BB0BD6 /* Assets.xcassets in Resources */,
 				4E5474152AC8825400BB0BD6 /* Main.storyboard in Resources */,
 			);
@@ -822,15 +838,16 @@
 				4E6D7EC12B0078AE0094819D /* CajaService.swift in Sources */,
 				4E5A84402AE9CD38002EE753 /* CategoriaPlatoTableViewCell.swift in Sources */,
 				4E56C47D2AF5DDE400B414D7 /* Mesa+CoreDataClass.swift in Sources */,
+				4E6C960F2B1BB07100748072 /* DetalleComanda+CoreDataProperties.swift in Sources */,
 				4E56C4852AF5DDE400B414D7 /* Caja+CoreDataClass.swift in Sources */,
 				9E951FD42B14350D00C8C509 /* DetaleComandaService.swift in Sources */,
+				4E6C961C2B1BB32D00748072 /* CajaDTO.swift in Sources */,
 				9E951FCC2B1426E000C8C509 /* DetalleComandaItem.swift in Sources */,
 				9E6E53502B102DDE004B7590 /* ComprobanteDTO.swift in Sources */,
 				4E56C47F2AF5DDE400B414D7 /* Comprobante+CoreDataClass.swift in Sources */,
 				9E6C79832ACD279F002C1E5A /* PrincipalViewController.swift in Sources */,
 				9E6E534A2B10280C004B7590 /* ListarComandaViewController.swift in Sources */,
 				4E56C4742AF5DDE400B414D7 /* Empleado+CoreDataProperties.swift in Sources */,
-				9E67710A2B1061320066449E /* Comanda+CoreDataClass.swift in Sources */,
 				9E7511982AFCCD4C00B82FEA /* CategoriaServiceRest.swift in Sources */,
 				4E56C4722AF5DDE400B414D7 /* MetodoPago+CoreDataProperties.swift in Sources */,
 				4E5474412AC88C7100BB0BD6 /* MetodosPagoListadoViewController.swift in Sources */,
@@ -851,6 +868,7 @@
 				4E56C4842AF5DDE400B414D7 /* Plato+CoreDataProperties.swift in Sources */,
 				9E8D961D2B1ADDC2005896D4 /* ComprobanteService.swift in Sources */,
 				9E684AAB2AFE85CC00E33029 /* PlatoDTOREST.swift in Sources */,
+				4E6C96132B1BB0CD00748072 /* Comanda+CoreDataProperties.swift in Sources */,
 				4E56C4522AF5DC4E00B414D7 /* UsuarioDTO.swift in Sources */,
 				9E6E53562B103647004B7590 /* ComandaService.swift in Sources */,
 				9E6E53522B102DFF004B7590 /* EstadoComandaDTO.swift in Sources */,
@@ -860,15 +878,15 @@
 				9E684AAD2AFE865900E33029 /* PlatoServiceRest.swift in Sources */,
 				4E16DD042AE733F5004A505A /* MetodoPagoTableViewCell.swift in Sources */,
 				4E56C4772AF5DDE400B414D7 /* Usuario+CoreDataClass.swift in Sources */,
-				9E6FBB802B183EB70087A533 /* DetalleComanda+CoreDataProperties.swift in Sources */,
 				E29133722AE04F13009E84B9 /* PlatoListadoViewController.swift in Sources */,
 				4E6CDCCA2B004EAE0064D8B1 /* MesaDTO.swift in Sources */,
 				4E6DF02E2AE73FED00DE7D52 /* MetodoPagoDTO.swift in Sources */,
+				4E6C96122B1BB0CD00748072 /* Comanda+CoreDataClass.swift in Sources */,
 				4E6953C32AF6E85000511B25 /* EstablecimientoService.swift in Sources */,
 				E29133702AE04EDB009E84B9 /* PlatoActualizarViewController.swift in Sources */,
-				9E6771082B10612F0066449E /* Comanda+CoreDataProperties.swift in Sources */,
 				9E6E534C2B102840004B7590 /* ComandaTableViewCell.swift in Sources */,
 				4E6953D22AF701A100511B25 /* EmpleadoTableViewCell.swift in Sources */,
+				4E6C961E2B1BC07100748072 /* ComandaDTORest.swift in Sources */,
 				4E6CDCCD2B0050980064D8B1 /* MesaServiceRest.swift in Sources */,
 				4E56C4702AF5DDE400B414D7 /* Cargo+CoreDataProperties.swift in Sources */,
 				4E56C46F2AF5DDE400B414D7 /* Cargo+CoreDataClass.swift in Sources */,
@@ -886,10 +904,11 @@
 				9E7489562B1A5ADB00F3568C /* FacturarComandaViewController.swift in Sources */,
 				E29133742AE04F2F009E84B9 /* PlatoAgregarViewController.swift in Sources */,
 				4E5A84422AE9CD79002EE753 /* PlatoTableViewCell.swift in Sources */,
+				4E6C960E2B1BB07100748072 /* DetalleComanda+CoreDataClass.swift in Sources */,
 				E26EEB2E2ACF8743003A69F0 /* MesaListadoViewController.swift in Sources */,
+				4E6C96182B1BB21B00748072 /* ComprobanteDTORest.swift in Sources */,
 				4E5A843E2AE9CB4D002EE753 /* CategoriaPlato+CoreDataProperties.swift in Sources */,
 				9E6C79852ACD27EF002C1E5A /* ConfiguracionViewController.swift in Sources */,
-				9E6FBB822B183EBA0087A533 /* DetalleComanda+CoreDataClass.swift in Sources */,
 				4E56C4802AF5DDE400B414D7 /* Comprobante+CoreDataProperties.swift in Sources */,
 				4E56C47E2AF5DDE400B414D7 /* Mesa+CoreDataProperties.swift in Sources */,
 				9E6E53542B102F5F004B7590 /* DetalleComandaDTO.swift in Sources */,
@@ -902,6 +921,7 @@
 				4E5A84302AE9CA1E002EE753 /* CategoriaPlatoDTO.swift in Sources */,
 				9EBFCC8E2B1B170F00DAD58C /* DatosComprobanteViewController.swift in Sources */,
 				4E6953C62AF6EB9700511B25 /* Establecimiento+CoreDataClass.swift in Sources */,
+				4E6C961A2B1BB2B300748072 /* TipoComprobanteDTO.swift in Sources */,
 				4E56C4832AF5DDE400B414D7 /* Plato+CoreDataClass.swift in Sources */,
 				4E5474452AC88C9B00BB0BD6 /* MetodosPagoActualizarViewController.swift in Sources */,
 				4E6D7EBD2B0074D00094819D /* EstablecimientoServiceRest.swift in Sources */,
