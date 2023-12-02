@@ -20,6 +20,8 @@ class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITab
     var listaPlato: [Plato] = []
     var combo = DropDown()
     var categoriaFiltro: String = "Categoría"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         listaPlato = PlatoService().listadoPlatos()

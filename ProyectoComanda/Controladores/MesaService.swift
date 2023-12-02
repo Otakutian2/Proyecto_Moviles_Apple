@@ -75,6 +75,53 @@ class MesaService: NSObject {
             print(ex.localizedDescription)
         }
     }
+    
+    func obtenerMesa() -> [Mesa] {
+        var arreglo: [Mesa] = []
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Mesa> = Mesa.fetchRequest()
+        let sort = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        do{
+            arreglo = try bd.fetch(fetchRequest)
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+        }
+        
+        return arreglo
+    }
+    
+    func obtenerMesaPorId(id: Int16)-> Mesa? {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Mesa> = Mesa.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+        do {
+            let mesa = try bd.fetch(fetchRequest)
+            return mesa.first
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+            return nil
+        }
+    }
+    
+    func actualizarEstadoMesa(id: Int16, nuevoEstado: String) {
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let bd = delegate.persistentContainer.viewContext
+
+            if let mesa = obtenerMesaPorId(id: id) {
+                mesa.estado = nuevoEstado
+
+                do {
+                    try bd.save()
+                } catch let error as NSError {
+                    print("Error al actualizar el estado de la mesa: \(error.localizedDescription)")
+                }
+            }
+        }
+    
+
 
 
 }

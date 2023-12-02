@@ -120,8 +120,6 @@ class PlatoAgregarViewController: UIViewController {
         //volver a la pestaña anterior
         self.navigationController?.popViewController(animated: true)
 
-        
-        
     }
    
     

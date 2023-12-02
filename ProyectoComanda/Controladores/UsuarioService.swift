@@ -114,10 +114,34 @@ class UsuarioService: NSObject {
         fetchRequest.predicate = unir
         
         do {
-            let resultado = try bd.fetch(fetchRequest)
-            
-           return !resultado.isEmpty
-        } catch {
+                let usuarios = try bd.fetch(fetchRequest)
+                
+                guard let usuario = usuarios.first else {
+                    return false
+                }
+                
+            if usuario.contrasena == password, let empleado = usuario.fk_usuario_empleado {
+                    // Guardar el empleado en la sesión
+                    let empleadoDTO = EmpleadoDTO(
+                        id: Int(empleado.id),
+                        nombre: empleado.nombre ?? "",
+                        apellido: empleado.apellido ?? "",
+                        telefono: empleado.telefono ?? "",
+                        dni: empleado.dni ?? "",
+                        fechaRegistro: empleado.fechaRegistro ?? "",
+                        Usuario: usuario,
+                        Cargo: empleado.fk_empleado_cargo ?? Cargo() // Use ?? to provide a default Cargo if it's nil
+                    )
+                    
+                    SessionManager.shared.currentEmpleado = empleadoDTO
+                
+                
+                    
+                    return true
+                } else {
+                    return false
+                }
+            } catch {
         
             print("Error al recuperar datos de inicio de sesi∫n: \(error)")
             return false

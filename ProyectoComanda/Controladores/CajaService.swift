@@ -49,5 +49,33 @@ class CajaService: NSObject {
             print(ex.localizedDescription)
         }
     }
+    
+    func listadoCaja() -> [Caja] {
+        var arreglo: [Caja] = []
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        do{
+            let request = Caja.fetchRequest()
+            arreglo = try bd.fetch(request)
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+        }
+        
+        return arreglo
+    }
+    
+    func obtenerCajaporId(id: Int16)-> Caja? {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Caja> = Caja.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+        do {
+            let mesa = try bd.fetch(fetchRequest)
+            return mesa.first
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+            return nil
+        }
+    }
 
 }

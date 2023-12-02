@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class EstadoComandaService: NSObject {
+    
     func obtenerTamano() -> Int {
         let lista = obtenerEstados()
         return lista.count
@@ -30,4 +31,11 @@ class EstadoComandaService: NSObject {
         
         return arreglo
     }
+    
+    
+    
+    
+    
+    
+   
 }

@@ -26,3 +26,6 @@ struct UsuarioDTO  {
         return contrasenia
     }
 }
+
+
+

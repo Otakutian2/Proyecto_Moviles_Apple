@@ -18,3 +18,12 @@ struct EmpleadoDTO {
     var Cargo : Cargo
 
 }
+
+class SessionManager {
+    static let shared = SessionManager()
+    
+    var currentEmpleado: EmpleadoDTO?
+    
+    private init() {}
+}
+

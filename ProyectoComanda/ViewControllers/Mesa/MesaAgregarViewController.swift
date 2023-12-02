@@ -32,6 +32,8 @@ class MesaAgregarViewController: UIViewController {
         var mesa = MesaDTO(id: 0, estado: "Libre", cantidadAsientos: Int(asientos)!)
         let idRest = MesaService().obtenerUltimoID()
         mesa.id = idRest
+        
+        
         MesaService().registrarMesa(mesa: mesa)
         MesaServiceRest().registrarMesaRest(mesa: mesa)
         

@@ -1,8 +1,8 @@
 //
 //  DetalleComanda+CoreDataProperties.swift
-//  ProyectoComanda
+//  
 //
-//  Created by Gary on 3/11/23.
+//  Created by Sebastian on 29/11/23.
 //
 //
 
@@ -16,15 +16,11 @@ extension DetalleComanda {
         return NSFetchRequest<DetalleComanda>(entityName: "DetalleComanda")
     }
 
-    @NSManaged public var id: Int16
     @NSManaged public var cantidadPedido: Int16
-    @NSManaged public var precioUnitario: Double
+    @NSManaged public var id: Int16
     @NSManaged public var observacion: String?
+    @NSManaged public var precioUnitario: Double
     @NSManaged public var fk_detalle_comanda: Comanda?
     @NSManaged public var fk_detalle_plato: Plato?
-
-}
-
-extension DetalleComanda : Identifiable {
 
 }

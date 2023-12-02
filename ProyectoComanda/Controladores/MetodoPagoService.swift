@@ -83,6 +83,22 @@ class MetodoPagoService: NSObject {
         }
     }
     
+    func obtenerMetodoPago(nombre: String) -> MetodoPago? {
+           let delegate = UIApplication.shared.delegate as! AppDelegate
+           let bd = delegate.persistentContainer.viewContext
+
+           let fetchRequest: NSFetchRequest<MetodoPago> = MetodoPago.fetchRequest()
+           fetchRequest.predicate = NSPredicate(format: "nombreMetodoPago == %@", nombre)
+
+           do {
+               let tc = try bd.fetch(fetchRequest)
+               return tc.first
+           } catch let error as NSError {
+               print(error.localizedDescription)
+               return nil
+           }
+       }
+    
 
     
     

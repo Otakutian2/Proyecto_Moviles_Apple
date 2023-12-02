@@ -76,5 +76,45 @@ class PlatoService: NSObject {
             print(ex.localizedDescription)
         }
     }
+    
+    
+    func listadoPlatosPorCategoria(categoria: String) -> [Plato] {
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let bd = delegate.persistentContainer.viewContext
+
+            // Crear una solicitud para la entidad "Plato"
+            let fetchRequest: NSFetchRequest<Plato> = Plato.fetchRequest()
+
+            // Filtrar por la categoría proporcionada
+            fetchRequest.predicate = NSPredicate(format: "fk_plato_categoria.categoria == %@", categoria)
+
+            do {
+                // Ejecutar la solicitud y obtener los resultados
+                let platos = try bd.fetch(fetchRequest)
+                return platos
+            } catch {
+                // Manejar el error de alguna manera
+                print("Error al obtener platos por categoría: \(error)")
+                return []
+            }
+        }
+
+    
+    func obtenerPlato(nombre: String) -> Plato? {
+           let delegate = UIApplication.shared.delegate as! AppDelegate
+           let bd = delegate.persistentContainer.viewContext
+
+           let fetchRequest: NSFetchRequest<Plato> = Plato.fetchRequest()
+           fetchRequest.predicate = NSPredicate(format: "nombre == %@", nombre)
+
+           do {
+               let platos = try bd.fetch(fetchRequest)
+               return platos.first
+           } catch let error as NSError {
+               print(error.localizedDescription)
+               return nil
+           }
+       }
+
 
 }

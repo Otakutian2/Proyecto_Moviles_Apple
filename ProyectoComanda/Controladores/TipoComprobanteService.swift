@@ -30,5 +30,21 @@ class TipoComprobanteService: NSObject {
         
         return arreglo
     }
+    
+    func obtenerTipo(nombre: String) -> TipoComprobante? {
+           let delegate = UIApplication.shared.delegate as! AppDelegate
+           let bd = delegate.persistentContainer.viewContext
+
+           let fetchRequest: NSFetchRequest<TipoComprobante> = TipoComprobante.fetchRequest()
+           fetchRequest.predicate = NSPredicate(format: "tipo == %@", nombre)
+
+           do {
+               let tc = try bd.fetch(fetchRequest)
+               return tc.first
+           } catch let error as NSError {
+               print(error.localizedDescription)
+               return nil
+           }
+       }
 
 }

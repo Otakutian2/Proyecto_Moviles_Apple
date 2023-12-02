@@ -1,8 +1,8 @@
 //
 //  DetalleComanda+CoreDataClass.swift
-//  ProyectoComanda
+//  
 //
-//  Created by Gary on 3/11/23.
+//  Created by Sebastian on 29/11/23.
 //
 //
 

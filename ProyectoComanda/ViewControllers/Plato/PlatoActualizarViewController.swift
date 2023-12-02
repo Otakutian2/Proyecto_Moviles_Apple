@@ -20,6 +20,7 @@ class PlatoActualizarViewController: UIViewController {
     @IBOutlet weak var btnCategoria: UIButton!
     @IBOutlet weak var txtPrecio: UITextField!
     @IBOutlet weak var txtNombre: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         idCat = (plato.fk_plato_categoria?.categoria)!

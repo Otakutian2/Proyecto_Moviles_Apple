@@ -133,5 +133,19 @@ class EmpleadoService: NSObject {
         }
         return false
     }
+    
+    func obtenerEmpleadoPorId(id: Int16)-> Empleado? {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Empleado> = Empleado.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+        do {
+            let usuario = try bd.fetch(fetchRequest)
+            return usuario.first
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+            return nil
+        }
+    }
 
 }
