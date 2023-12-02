@@ -92,5 +92,17 @@ class EmpleadoMantenimientoViewController: UIViewController, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                if editingStyle == .delete {
+                    EmpleadoService().eliminarEmpleado(empleado: listaEmpleados[indexPath.row])
+                    EmpleadosServiceRest().eliminarEmpleadoRest(id: Int(listaEmpleados[indexPath.row].id))
+                    cargarLista()
+                }
+            }
+
+        func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+                return.delete
+       }
+    
 }
 
