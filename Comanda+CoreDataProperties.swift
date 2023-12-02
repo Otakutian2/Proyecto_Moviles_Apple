@@ -22,7 +22,7 @@ extension Comanda {
     @NSManaged public var fechaEmision: String?
     @NSManaged public var fk_comanda_mesa: Mesa?
     @NSManaged public var fk_comanda_estado: EstadoComanda?
-    @NSManaged public var fk_comanda_empleado: Empleado?
+    @NSManaged public var fk_comanda_wempleado: Empleado?
     @NSManaged public var fk_comanda_detalleComanda: NSSet?
     @NSManaged public var fk_comanda_comprobante: Comprobante?
 
