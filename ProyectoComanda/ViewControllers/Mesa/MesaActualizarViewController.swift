@@ -49,15 +49,18 @@ class MesaActualizarViewController: UIViewController {
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
             if self.mesa.fk_mesa_comanda?.count == 0 {
                 if(self.mesa.estado == "Libre"){
-                    let id = Int(self.mesa.id)
+                    if(self.mesa.fk_mesa_comanda?.count == 0){
+                        let id = Int(self.mesa.id)
+                        MesaService().eliminarMesa(mesa: self.mesa)
+                        MesaServiceRest().eliminarMesaRest(id: id)
+                        NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
+                        Toast(text: "Mesa eliminada eliminado").show()
+                        //VOLVER A LA PESTAÑA ANTERIOR
+                        self.navigationController?.popViewController(animated: true)
+                    }else {
+                        Toast(text: "No se puede eliminar una Mesa que tenga comandas registradas").show()
+                    }
                     
-                    
-                    MesaService().eliminarMesa(mesa: self.mesa)
-                    MesaServiceRest().eliminarMesaRest(id: id)
-                    NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
-                    Toast(text: "Mesa eliminada eliminado").show()
-                    //VOLVER A LA PESTAÑA ANTERIOR
-                    self.navigationController?.popViewController(animated: true)
                 }else {
                     Toast(text: "No se puede eliminar una Mesa con estado ocupado").show()
 

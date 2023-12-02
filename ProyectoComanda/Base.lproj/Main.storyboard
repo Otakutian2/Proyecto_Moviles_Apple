@@ -189,12 +189,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Irh-bw-Pye">
-                                <rect key="frame" x="42" y="571" width="209" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J5v-Sp-JFS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -202,7 +196,6 @@
                     <navigationItem key="navigationItem" id="9Vo-jv-Hwf"/>
                     <connections>
                         <outlet property="btnCajaRegistradora" destination="SzW-Ca-Q3e" id="bET-C6-PYF"/>
-                        <outlet property="txtEmpleado" destination="Irh-bw-Pye" id="cad-DJ-ejg"/>
                         <segue destination="w9J-42-ifk" kind="show" identifier="comanda" id="Kb2-Ds-uRI"/>
                         <segue destination="6A4-dN-hbf" kind="show" identifier="configuracion" id="p0c-Fj-nYr"/>
                         <segue destination="7AL-87-6fG" kind="show" identifier="caja" id="mPV-QV-jj8"/>
