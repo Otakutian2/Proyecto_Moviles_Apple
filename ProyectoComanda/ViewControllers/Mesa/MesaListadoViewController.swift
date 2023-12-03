@@ -70,7 +70,7 @@ class MesaListadoViewController: UIViewController, UITableViewDataSource, UITabl
                     if editingStyle == .delete {
                       let mesaRow = listaMesas[indexPath.row]
                        
-                        if(mesaRow.estado == "Libre"){
+                        if(mesaRow.estado == "Ocupado"){
                             Toast(text: "No se puede eliminar una Mesa con estado ocupado").show()
                          return
                         }
