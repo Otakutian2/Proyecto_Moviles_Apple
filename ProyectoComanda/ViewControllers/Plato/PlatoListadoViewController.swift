@@ -120,7 +120,7 @@ class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITab
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
                         PlatoService().eliminarPlato(plato: listaPlato[indexPath.row])
-                        PlatoServiceRest().eliminarPlatoRest(id: Int(listaEmpleados[indexPath.row].id))
+                        PlatoServiceRest().eliminarPlatoRest(id: Int(listaPlato[indexPath.row].id))
                         cargarLista()
                     }
                 }

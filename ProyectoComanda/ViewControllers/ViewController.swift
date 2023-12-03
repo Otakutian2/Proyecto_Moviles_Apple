@@ -4,8 +4,8 @@ import CoreData
 import FacebookLogin
 import FacebookCore
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, LoginButtonDelegate {
+    var dateFormat = DateFormatter()
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtContraseña: UITextField!
     
@@ -46,9 +46,9 @@ class ViewController: UIViewController {
                 self.registrarEmpleado(resultadoArregloString: resultadoArregloString)
             }
         
-            var usuario = UsuarioService().obtenerUsuarioPorCorreo(correo: correo)!
+            let usuario = UsuarioService().obtenerUsuarioPorCorreo(correo: correo)!
             
-            UsuarioService().login(correo: usuario.correo, password: usuario.contrasena)
+            UsuarioService().login(correo: usuario.correo!, password: usuario.contrasena!)
             
             Toast(text: "Inicio de sesión exitoso").show()
             
