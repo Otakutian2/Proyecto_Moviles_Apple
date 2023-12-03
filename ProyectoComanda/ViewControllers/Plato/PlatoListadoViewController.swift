@@ -21,8 +21,7 @@ class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITab
     var combo = DropDown()
     var categoriaFiltro: String = "Categoría"
     
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         listaPlato = PlatoService().listadoPlatos()
         if listaPlato.count == 0 {
@@ -117,5 +116,16 @@ class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITab
             pantalla.plato = listaPlato[indexPath.row]
         }
     }
-    
+
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                    if editingStyle == .delete {
+                        PlatoService().eliminarPlato(plato: listaPlato[indexPath.row])
+                        PlatoServiceRest().eliminarPlatoRest(id: Int(listaEmpleados[indexPath.row].id))
+                        cargarLista()
+                    }
+                }
+
+            func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+                    return.delete
+           }    
 }
