@@ -60,7 +60,7 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
 
         // Verificar si hay un empleado en sesión
         if let empleadoDTO = sessionManager.currentEmpleado {
-            if empleadoDTO.nombre == "Cajero" || empleadoDTO.nombre == "admin" {
+            if empleadoDTO.Cargo.nombre == "CAJERO" || empleadoDTO.Cargo.nombre == "ADMINISTRADOR" {
                 btnFacturar.isEnabled = true
             } else {
                 btnFacturar.isEnabled = false
