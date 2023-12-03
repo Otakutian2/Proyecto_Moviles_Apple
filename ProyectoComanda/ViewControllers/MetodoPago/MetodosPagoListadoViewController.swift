@@ -106,5 +106,16 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     @IBAction func btnFiltrado(_ sender: Any) {
         cargarLista()
     }
-   
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                    if editingStyle == .delete {
+                        MetodoPagoService().eliminarMetodo(metodo: listaMets[indexPath.row])
+                        MetodoPagoServiceRest().eliminarMetodoPagoRest(id: Int(listaMets[indexPath.row].id))
+                        cargarLista()
+                    }
+                }
+
+            func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+                    return.delete
+           }   
 }
