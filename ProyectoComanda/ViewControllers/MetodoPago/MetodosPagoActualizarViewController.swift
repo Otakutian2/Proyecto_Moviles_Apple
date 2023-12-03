@@ -68,14 +68,20 @@ class MetodosPagoActualizarViewController: UIViewController {
         let ventana = UIAlertController(title: "Sistema", message: "¿Seguro de eliminar?", preferredStyle: .alert)
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
             let id = Int(self.metodo.id)
+            if(self.metodo.fk_metodo_cdp?.count == 0){
+                MetodoPagoService().eliminarMetodo(metodo: self.metodo)
+                //Eliminar rest
+                MetodoPagoServiceRest().eliminarMetodoPagoRest(id: id)
+                NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
+                Toast(text: "Método eliminado").show()
+                //VOLVER A LA PESTAÑA ANTERIOR
+                self.navigationController?.popViewController(animated: true)
+            }else {
+                Toast(text: "NO se puede eliminar este método de pago porque tiene comprobantes").show()
+
+            }
             
-            MetodoPagoService().eliminarMetodo(metodo: self.metodo)
-            //Eliminar rest
-            MetodoPagoServiceRest().eliminarMetodoPagoRest(id: id)
-            NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
-            Toast(text: "Método eliminado").show()
-            //VOLVER A LA PESTAÑA ANTERIOR
-            self.navigationController?.popViewController(animated: true)
+            
         })
         ventana.addAction(botonAceptar)
         ventana.addAction(UIAlertAction(title: "No", style: .cancel))
