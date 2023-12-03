@@ -68,8 +68,19 @@ class MesaListadoViewController: UIViewController, UITableViewDataSource, UITabl
 
        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
-                        MesaService().eliminarMesa(mesa: listaMesas[indexPath.row])
-                        MesaServiceRest().eliminarMesaRest(id: Int(listaMesas[indexPath.row].id))
+                      let mesaRow = listaMesas[indexPath.row]
+                       
+                        if(mesaRow.estado == "Libre"){
+                            Toast(text: "No se puede eliminar una Mesa con estado ocupado").show()
+                         return
+                        }
+                        if(mesaRow.fk_mesa_comanda?.count > 0){
+                            Toast(text: "No se puede eliminar una Mesa con comandas registradas").show()
+                            return
+                        }
+                        
+                        MesaService().eliminarMesa(mesa: mesaRow)
+                        MesaServiceRest().eliminarMesaRest(id: Int(mesaRow.id))
                         cargarLista()
                     }
                 }
