@@ -74,7 +74,7 @@ class MesaListadoViewController: UIViewController, UITableViewDataSource, UITabl
                             Toast(text: "No se puede eliminar una Mesa con estado ocupado").show()
                          return
                         }
-                        if(mesaRow.fk_mesa_comanda?.count > 0){
+                        if(mesaRow.fk_mesa_comanda!.count > 0){
                             Toast(text: "No se puede eliminar una Mesa con comandas registradas").show()
                             return
                         }

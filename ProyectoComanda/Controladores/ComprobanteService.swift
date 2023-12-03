@@ -150,27 +150,6 @@ class ComprobanteService: NSObject {
                 print("Datos guardados")
             }
         }
-        /*
-        bd.collection("Comprobante").addDocument(id).setData([
-            "fechaEmision": cdp.fechaEmision,
-            "precioTotalPedido": cdp.precioTotalPedido,
-            "igv": cdp.igv,
-            "subTotal": cdp.subTotal,
-            "descuento": cdp.descuento,
-            "nombreCliente": cdp.nombreCliente,
-            "metodoPago": cdp.metodoPago,
-            "tipoComprobante": cdp.tipoComprobante,
-            "empleado": cdp.empleado,
-            "comanda": cdp.comanda,
-            "caja": cdp.caja
-        ]){ error in
-            if let e = error {
-                print(e.localizedDescription + "ERROR DE FIREBASE")
-            } else {
-                print("Comprobante registrado")
-                
-            }
-        }*/
     }
     
 }

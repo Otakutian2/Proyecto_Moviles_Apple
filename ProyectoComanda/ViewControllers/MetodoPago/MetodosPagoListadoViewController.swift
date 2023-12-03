@@ -111,7 +111,7 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
                            let metodo = listaMets[indexPath.row]
-                          if(metodo.fk_metodo_cdp?.count > 0){
+                          if(metodo.fk_metodo_cdp!.count > 0){
                                Toast(text: "NO se puede eliminar este método de pago porque tiene comprobantes").show()
                               return
                            } 

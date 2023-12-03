@@ -170,7 +170,10 @@ class RegistrarComandaViewController: UIViewController, UITableViewDataSource, U
             
         let asientos = txtcantAsientos.text!
         let precioTotal = txtpreciototal.text!
-        
+        if idMesa == "Seleccionar" {
+            Toast(text: "Debes seleccionar una mesa").show()
+            return
+        }
        
         let obtenerMesas = MesaService().obtenerMesa()
         

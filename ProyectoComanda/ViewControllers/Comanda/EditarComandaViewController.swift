@@ -76,7 +76,7 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
         tbDetalle.rowHeight = 122
         tbDetalle.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(cargarDetalleComandas), name: NSNotification.Name(rawValue: "load2"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateDetallesComanda), name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disUpdateCore), name: NSNotification.Name(rawValue: "load"), object: nil)
         
     }
     
@@ -86,7 +86,10 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
         // Limpia el detalle de la comanda temporal al navegar hacia atrás
         SessionManagerDetalle.shared.limpiarDetallesComandaTemporales()
     }
-    
+    @objc func disUpdateCore(){
+            didUpdateDetallesComanda()
+            
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -123,45 +126,48 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
     
     
     @objc func didUpdateDetallesComanda() {
-        // Método que se llama cuando se actualiza la lista de detalles de la comanda
-        listarDetalle = SessionManagerDetalle.shared.detallesComandaTemporales
-        tbDetalle.reloadData()
-        
-        // Accede a la instancia compartida de SessionManagerDetalle
-        let sessionManagerDetalle = SessionManagerDetalle.shared
-        
-        // Obtén el detalle global
-        let detalleGlobal = sessionManagerDetalle.obtenerDetallesComandaTemporales()
-        
-        // Inicializa la variable total acumulado para detalles temporales
-        var totalAcumulado: Double = 0.00
-        
-        // Itera a través de los detalles temporales
-        for detalle in detalleGlobal {
-            let precioPlato = detalle.plato.precioPlato
-            let cantidadPedido = detalle.cantidadPedido
-            
-            // Calcula el total del plato actual
-            let totalPlato = precioPlato * Double(cantidadPedido)
-            
-            // Suma el total del plato actual al total acumulado para detalles temporales
-            totalAcumulado += totalPlato
+            // Método que se llama cuando se actualiza la lista de detalles de la comanda
+            listarDetalle = SessionManagerDetalle.shared.detallesComandaTemporales
+            tbDetalle.reloadData()
+
+            // Accede a la instancia compartida de SessionManagerDetalle
+            let sessionManagerDetalle = SessionManagerDetalle.shared
+
+            // Obtén el detalle global
+            let detalleGlobal = sessionManagerDetalle.obtenerDetallesComandaTemporales()
+
+            // Inicializa la variable total acumulado para detalles temporales
+            var totalAcumulado: Double = 0.00
+
+            // Itera a través de los detalles temporales
+            for detalle in detalleGlobal {
+                let precioPlato = detalle.plato.precioPlato
+                let cantidadPedido = detalle.cantidadPedido
+
+                // Calcula el total del plato actual
+                let totalPlato = precioPlato * Double(cantidadPedido)
+
+                // Suma el total del plato actual al total acumulado para detalles temporales
+                totalAcumulado += totalPlato
+            }
+
+            // Obtén el precio total del detalle de la comanda core
+            let comandaDetalle = DetaleComandaService().listaDetallePorComanda(idComanda: idComanda)
+            var precioTotalFinal: Double = 0.00
+
+            for c in comandaDetalle {
+                // Asegúrate de que el precio total de la comanda se actualice teniendo en cuenta la cantidad
+                let precioUnitario = c.fk_detalle_plato?.precioPlato ?? 0.00
+                let cantidad = c.cantidadPedido
+                precioTotalFinal += precioUnitario * Double(cantidad)
+            }
+
+            // Suma el precio del detalle de la comanda core y el total acumulado de detalles temporales
+            precioTotalFinal += totalAcumulado
+
+            // Actualiza el campo de texto con el precio total final
+            txtPrecioTotal.text = String(precioTotalFinal)
         }
-        
-        // Obtén el precio total del detalle de la comanda core
-        let comandaDetalle = DetaleComandaService().listaDetallePorComanda(idComanda: idComanda)
-        var precioDelDetalleCore: Double = 0.00
-        
-        for c in comandaDetalle {
-            precioDelDetalleCore = c.fk_detalle_comanda!.precioTotal
-        }
-        
-        // Suma el precio del detalle de la comanda core y el total acumulado de detalles temporales
-        let precioTotalFinal = precioDelDetalleCore + totalAcumulado
-        
-        // Actualiza el campo de texto con el precio total final
-        txtPrecioTotal.text = String(precioTotalFinal)
-    }
 
     
     @objc func cargarDetalleComandas(){
@@ -172,7 +178,7 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     @IBAction func btnAñadirPlato(_ sender: Any) {
-        
+        performSegue(withIdentifier: "actualizar_plato", sender: self)
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -196,12 +202,49 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "cambiarPlato", sender: indexPath)
-    }
+            // Accede a la instancia compartida de SessionManagerDetalle
+            let sessionManagerDetalle = SessionManagerDetalle.shared
+
+            // Obtén el detalle global
+            let detalleGlobal = sessionManagerDetalle.obtenerDetallesComandaTemporales()
+
+            // Verifica si AL MENOS UN detalle es nulo
+            let alMenosUnoNulo = detalleGlobal.contains { detalle in
+                let detalleComandaporId = DetaleComandaService().obtenerDetalleComandaporId(id: Int16(detalle.id))
+                return detalleComandaporId == nil
+            }
+
+            if alMenosUnoNulo {
+                Toast(text: "Debes guardar el nuevo plato para poder actualizar").show()
+            } else {
+                // Ningún detalle es nulo, puedes proceder con la acción deseada
+                performSegue(withIdentifier: "cambiarPlato", sender: indexPath)
+            }
+        }
     
     @IBAction func btnActualizarComandaDetalle(_ sender: Any) {
+            
+            let precioTotal = Double(txtPrecioTotal.text!)
+            
+            comanda.precioTotal = precioTotal!
+            
+            //Accede a la instancia compartida de SessionManagerDetalle
+            let sessionManagerDetalle = SessionManagerDetalle.shared
+
+            // Obtén el detalle global
+            let detalleGlobal = sessionManagerDetalle.obtenerDetallesComandaTemporales()
+            
+            
+            ComandaService().actualizarComandaYDetalles(comanda: comanda, nuevosDetalles: detalleGlobal)
+            Toast(text: "Comanda actualizada").show()
+            //hacer que llamemos a la notificación creada para refrescar la lista
+            NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
+            //volver a la pestaña anterior
+            self.navigationController?.popViewController(animated: true)
+          
         
-    }
+            
+        }
     
     
     @IBAction func btnFacturar(_ sender: Any) {

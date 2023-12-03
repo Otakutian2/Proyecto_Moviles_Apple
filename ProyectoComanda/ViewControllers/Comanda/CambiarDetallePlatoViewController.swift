@@ -65,8 +65,9 @@ class CambiarDetallePlatoViewController: UIViewController {
         detalleComanda?.fk_detalle_comanda = comandaDetalle!
        
         DetaleComandaService().actualizarDetalleComanda(detalle: detalleComanda)
+        NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("load2"), object: nil)
-
+     
 
         // Cierra la vista actual
         dismiss(animated: true, completion: nil)

@@ -120,7 +120,7 @@ class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITab
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
                         let platoRow = listaPlato[indexPath.row]
-                         if(platoRow.fk_plato_detalle?.count > 0){
+                         if(platoRow.fk_plato_detalle!.count > 0){
                              Toast(text: "No se puede eliminar el plato porque está registrado en comandas").show()
                              return
                          }

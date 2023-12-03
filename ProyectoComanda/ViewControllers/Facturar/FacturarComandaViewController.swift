@@ -27,11 +27,10 @@ class FacturarComandaViewController: UIViewController {
     
     @IBOutlet weak var txtCliente: UITextField!
     
-    var idComprobante = "Seleccione"
+    var idComprobante = "Seleccionar"
 
-    var idCaja = "Seleccione"
-    
-    var idMetodoPago = "Seleccione"
+    var idCaja = "Seleccionar"
+    var idMetodoPago = "Seleccionar"
     
     var comboCaja = DropDown()
     
@@ -159,8 +158,20 @@ class FacturarComandaViewController: UIViewController {
     }
     
     @IBAction func btnFacturar(_ sender: Any) {
-        
-        
+        let subTotal = Double(txtSubTotal.text!)
+        if idCaja == "Seleccionar" {
+            Toast(text: "Debes seleccionar una caja").show()
+            return
+        }
+                
+        if idComprobante == "Seleccionar" {
+            Toast(text: "Debes seleccionar una tipo de comprobante").show()
+            return
+        }
+        if idMetodoPago == "Seleccionar" {
+            Toast(text: "Debes seleccionar una metodo de pago").show()
+            return
+        }
         
         let sessionManager = SessionManager.shared
 
@@ -179,23 +190,25 @@ class FacturarComandaViewController: UIViewController {
         
         let empleado = EmpleadoService().obtenerEmpleadoPorId(id: Int16(idEmpleado))
             
-            let igv = Double(txtIgv.text!)
-            let subTotal = Double(txtSubTotal.text!)
-                
-            
-            if let descuentoText = txtDescuento.text,
-               let totalText = txtTotal.text,
-               let descuento = Double(descuentoText),
-               let total = Double(totalText),
-               descuento >= 0,
-               descuento <= total,
-               descuentoText.range(of: #"^\d+$"#, options: .regularExpression) != nil {
-                // El descuento es un número positivo y solo contiene dígitos
-                // Continuar con el cálculo
-            } else {
-                Toast(text: "Ingrese un descuento válido").show()
+        let igv = Double(txtIgv.text!)
+        var descuento = Double(txtDescuento.text!)
+        var cliente = txtCliente.text!
+                        
+        if txtDescuento.text == ""{
+                            
+            descuento = 0.00
+        }
+        if txtCliente.text == ""{
+                            
+            cliente = "Cliente"
+        }
+
+        if let descuento = Double(txtDescuento.text ?? ""),
+            let total = Double(txtTotal.text ?? ""),
+            descuento > total {
+                Toast(text: "El descuento es mayor al total, verifique").show()
                 return
-            }
+        }
 
             if let descuento = Double(txtDescuento.text ?? ""),
                let total = Double(txtTotal.text ?? ""),
@@ -206,7 +219,6 @@ class FacturarComandaViewController: UIViewController {
             
             
             
-            let descuento = Double(txtDescuento.text!)
             let total = Double(txtTotal.text!)
             
             let fechaActual = Date()
@@ -214,7 +226,6 @@ class FacturarComandaViewController: UIViewController {
             dateFormat.dateFormat = "yyyy-MM-dd"
             let fechaActualString = dateFormat.string(from: fechaActual)
             
-            let cliente = txtCliente.text!
             
             let comprobanteDto = ComprobanteDTO(id: 0, fechaEmision: fechaActualString, precioTotalPedido: total!, igv: igv!, subTotal: subTotal!, descuento: descuento!, nombreCliente: cliente, fk_CDP_tipocdp: comprobante, fk_cdp_caja: caja, fk_cdp_comanda: comanda, fk_cdp_metodo: metodoPago, fk_cdp_empleado: empleado)
             

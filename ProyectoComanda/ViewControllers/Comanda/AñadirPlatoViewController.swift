@@ -86,7 +86,9 @@ class An_adirPlatoViewController: UIViewController {
         }
     }
     @IBAction func btnAgregarPlato(_ sender: UIButton) {
-        let cantidadPedido = Int(txtCantidad.text ?? "")
+                
+                
+                let cantidadPedido = Int(txtCantidad.text ?? "")
                 let observacion = txtObservacion.text!
 
                 // Verificar si el plato ya está en la lista
@@ -132,14 +134,7 @@ class An_adirPlatoViewController: UIViewController {
 
 
                 }
+            }
     }
     
 
-
-
-    
-    
-    
-    
-    
-}

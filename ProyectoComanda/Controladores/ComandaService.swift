@@ -148,7 +148,47 @@ class ComandaService: NSObject {
         return arreglo
     }
 
-    
+    func actualizarComandaYDetalles(comanda: Comanda, nuevosDetalles: [DetalleComandaDTO]) {
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let bd = delegate.persistentContainer.viewContext
+
+            // Inicia una transacción de Core Data
+            bd.performAndWait {
+                do {
+                    // Obtén la comanda existente por su ID
+                    guard let comandaExistente = ComandaService().obtenerComandaPorId(id: Int16(comanda.id)) else {
+                        print("No se encontró la comanda existente.")
+                        return
+                    }
+
+                    // Actualiza los atributos de la comanda
+                   
+                    comandaExistente.precioTotal = comanda.precioTotal
+
+                    // Registra los nuevos detallesComanda y los asocia con la comanda
+                    for nuevoDetalle in nuevosDetalles {
+                        let detalleComandaporId = DetaleComandaService().obtenerDetalleComandaporId(id: Int16(nuevoDetalle.id))
+                        
+                        if detalleComandaporId == nil{
+                            let nuevoDetalleEntity = DetalleComanda(context: bd)
+                            nuevoDetalleEntity.id = Int16(DetaleComandaService().obtenerUltimoID())
+                            nuevoDetalleEntity.cantidadPedido = Int16(nuevoDetalle.cantidadPedido)
+                            nuevoDetalleEntity.precioUnitario = nuevoDetalle.precioUnitario
+                            nuevoDetalleEntity.observacion = nuevoDetalle.obsevacion
+                            nuevoDetalleEntity.fk_detalle_plato = nuevoDetalle.plato
+                            nuevoDetalleEntity.fk_detalle_comanda = comandaExistente
+                            
+                        }
+                    }
+
+                    // Guarda los cambios en Core Data
+                    try bd.save()
+
+                } catch let error as NSError {
+                    print("Error al actualizar comanda y detalles: \(error.localizedDescription)")
+                }
+            }
+        }
    
     
     
