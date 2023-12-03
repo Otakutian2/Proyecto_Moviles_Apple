@@ -88,9 +88,10 @@ class CategoriaListadoViewController: UIViewController, UITableViewDataSource, U
                           Toast(text: "No se puede eliminar una categoría con platos registrados").show()
                             return
                         }
-                        
+                        let id = Int(categoria.id)
+                        print(id)
                         CategoriaService().eliminarCategoria(cat:categoria)
-                        CategoriaServiceRest().eliminarCategoriaRest(id: Int(listaCats[indexPath.row].id))
+                        CategoriaServiceRest().eliminarCategoriaRest(id: id)
                         cargarLista()
                     }
                 }
