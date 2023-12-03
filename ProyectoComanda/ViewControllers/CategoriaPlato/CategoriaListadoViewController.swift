@@ -83,7 +83,13 @@ class CategoriaListadoViewController: UIViewController, UITableViewDataSource, U
 
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
-                        CategoriaService().eliminarCategoria(cat: listaCats[indexPath.row])
+                        let categoria = listaCats[indexPath.row]
+                        if categoria.fk_categoria_plato?.count > 0 {
+                          Toast(text: "No se puede eliminar una categoría con platos registrados").show()
+                            return
+                        }
+                        
+                        CategoriaService().eliminarCategoria(cat:categoria)
                         CategoriaServiceRest().eliminarCategoriaRest(id: Int(listaCats[indexPath.row].id))
                         cargarLista()
                     }
