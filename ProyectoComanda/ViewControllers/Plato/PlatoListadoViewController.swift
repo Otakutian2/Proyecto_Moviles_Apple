@@ -7,7 +7,7 @@
 
 import UIKit
 import DropDown
-
+import Toaster
 class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var lblDatos: UILabel!
@@ -119,8 +119,14 @@ class PlatoListadoViewController: UIViewController, UITableViewDataSource, UITab
 
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
-                        PlatoService().eliminarPlato(plato: listaPlato[indexPath.row])
-                        PlatoServiceRest().eliminarPlatoRest(id: Int(listaPlato[indexPath.row].id))
+                        let platoRow = listaPlato[indexPath.row]
+                         if(platoRow.fk_plato_detalle?.count > 0){
+                             Toast(text: "No se puede eliminar el plato porque está registrado en comandas").show()
+                             return
+                         }
+                        
+                        PlatoService().eliminarPlato(plato: platoRow)
+                        PlatoServiceRest().eliminarPlatoRest(id: Int(platoRow.id))
                         cargarLista()
                     }
                 }
