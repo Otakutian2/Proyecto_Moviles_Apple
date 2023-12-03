@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Toaster
 //INVOCAMOS ESTOS MÉTODOS
 class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -109,7 +110,13 @@ class MetodosPagoListadoViewController: UIViewController, UITableViewDataSource,
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                     if editingStyle == .delete {
-                        MetodoPagoService().eliminarMetodo(metodo: listaMets[indexPath.row])
+                           let metodo = listaMets[indexPath.row]
+                          if(metodo.fk_metodo_cdp?.count > 0){
+                               Toast(text: "NO se puede eliminar este método de pago porque tiene comprobantes").show()
+                              return
+                           } 
+                        
+                        MetodoPagoService().eliminarMetodo(metodo: metodo )
                         MetodoPagoServiceRest().eliminarMetodoPagoRest(id: Int(listaMets[indexPath.row].id))
                         cargarLista()
                     }
