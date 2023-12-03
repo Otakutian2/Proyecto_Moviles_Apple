@@ -80,5 +80,16 @@ class CategoriaListadoViewController: UIViewController, UITableViewDataSource, U
     @IBAction func btnFiltrar(_ sender: Any) {
         cargarLista()
     }
-    
+
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                    if editingStyle == .delete {
+                        CategoriaService().eliminarCategoria(cat: listaCats[indexPath.row])
+                        CategoriaServiceRest().eliminarCategoriaRest(id: Int(listaCats[indexPath.row].id))
+                        cargarLista()
+                    }
+                }
+
+            func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+                    return.delete
+           }    
 }
