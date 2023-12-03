@@ -240,7 +240,6 @@ class FacturarComandaViewController: UIViewController {
             let comprobanteDtoRest = ComprobanteDTORest(id: 0, fechaEmision: fechaActualString, precioTotalPedido: total!, igv: igv!, subTotal: subTotal!, descuento: descuento!, nombreCliente: cliente, metodoPago: metDTO, tipoComprobante: tipoComprobanteDTO, empleado: empleadoDTO, comanda: comandaDTO, caja: cajaDTO)
             
             ComprobanteService().registrarComprobante(comprobante: comprobanteDto)
-            ComprobanteService().registrarComprobanteRest(cdp: comprobanteDtoRest)
             ComprobanteService().registrarCDPFirebase(cdp: comprobanteDtoRest)
             
             

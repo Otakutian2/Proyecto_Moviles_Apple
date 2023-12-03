@@ -96,7 +96,62 @@ class ComprobanteService: NSObject {
     func registrarCDPFirebase(cdp : ComprobanteDTORest){
         let bd = Firestore.firestore()
         let id = UUID().uuidString
-        bd.collection("Comprobante").document(id).setData([
+        
+        let metodoPago : [String : Any] = [
+            "metodo": cdp.metodoPago.nombreMetodoPago
+        ]
+        let tipo : [String : Any] = [
+            "tipo": cdp.tipoComprobante.tipo
+        ]
+        let empleado : [String : Any] = [
+            "nombre": cdp.empleado.nombre,
+            "apellido": cdp.empleado.apellido,
+            "telefono": cdp.empleado.telefono,
+            "dni": cdp.empleado.dni,
+            "fechaRegistro": cdp.empleado.fechaRegistro,
+            "cargo": cdp.empleado.cargo.nombre
+        ]
+        let comanda : [String : Any] = [
+            "cantidadAsientos": cdp.comanda.cantidadAsientos,
+            "precioTotal": cdp.comanda.precioTotal,
+            "fechaEmision": cdp.comanda.fechaEmision,
+            "mesa": cdp.comanda.mesa.id,
+            "estadoComanda": cdp.comanda.estadoComanda.estado,
+            "empleadomesero": cdp.comanda.empleado.nombre
+        ]
+        let Establecimiento : [String : Any] = [
+            "nomEstablecimiento": cdp.caja.Establecimiento.nomEstablecimiento,
+            "telefono": cdp.caja.Establecimiento.telefonoestablecimiento,
+            "direccion": cdp.caja.Establecimiento.direccionestablecimiento,
+            "ruc": cdp.caja.Establecimiento.rucestablecimiento
+        ]
+        let caja : [String : Any] = [
+            "idCaja": cdp.caja.id,
+            "establecimiento": Establecimiento
+        ]
+        
+        let userData : [String: Any] = [
+            "fechaEmision": cdp.fechaEmision,
+            "precioTotalPedido": cdp.precioTotalPedido,
+            "igv": cdp.igv,
+            "subTotal": cdp.subTotal,
+            "descuento": cdp.descuento,
+            "nombreCliente": cdp.nombreCliente,
+            "metodoPago": metodoPago,
+            "tipoComprobante": tipo,
+            "empleado": empleado,
+            "comanda": comanda,
+            "caja": caja
+        ]
+        bd.collection("Comprobante").addDocument(data: userData) { error in
+            if let error = error {
+                print("error al guardar")
+            } else {
+                print("Datos guardados")
+            }
+        }
+        /*
+        bd.collection("Comprobante").addDocument(id).setData([
             "fechaEmision": cdp.fechaEmision,
             "precioTotalPedido": cdp.precioTotalPedido,
             "igv": cdp.igv,
@@ -110,12 +165,12 @@ class ComprobanteService: NSObject {
             "caja": cdp.caja
         ]){ error in
             if let e = error {
-                print(e.localizedDescription)
+                print(e.localizedDescription + "ERROR DE FIREBASE")
             } else {
                 print("Comprobante registrado")
                 
             }
-        }
+        }*/
     }
     
 }
