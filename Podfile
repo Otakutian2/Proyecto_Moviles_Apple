@@ -19,4 +19,7 @@ pod 'DropDown'
 pod 'Toaster'
 pod 'Alamofire'
 pod 'Firebase/Firestore'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 end

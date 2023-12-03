@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 import FirebaseCore
+import FacebookCore
+import FacebookLogin
 
 	@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -183,7 +185,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(ex.localizedDescription)
         }
         FirebaseApp.configure()
+        
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
+        
+        if AccessToken.current != nil {
+            LoginManager().logOut()
+        }
+        
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        if AccessToken.current != nil {
+            LoginManager().logOut()
+        }
+        
+        print("Cierre de la aplicación")
+    }
+
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
     }
 
     // MARK: UISceneSession Lifecycle

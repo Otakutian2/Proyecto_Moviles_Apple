@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 class PrincipalViewController: UIViewController {
 
@@ -32,6 +34,16 @@ class PrincipalViewController: UIViewController {
         
         
       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            if AccessToken.current != nil {
+                LoginManager().logOut()
+            }
+        }
     }
     
     @IBAction func IngresarComandas(_ sender: Any) {

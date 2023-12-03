@@ -97,6 +97,20 @@ class UsuarioService: NSObject {
         }
     }
     
+    func obtenerUsuarioPorCorreo(correo: String)-> Usuario? {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let bd = delegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Usuario> = Usuario.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "correo == %@", correo)
+        do {
+            let usuario = try bd.fetch(fetchRequest)
+            return usuario.first
+        } catch let ex as NSError{
+            print(ex.localizedDescription)
+            return nil
+        }
+    }
+    
     func login(correo: String, password: String) -> Bool {
         
         
