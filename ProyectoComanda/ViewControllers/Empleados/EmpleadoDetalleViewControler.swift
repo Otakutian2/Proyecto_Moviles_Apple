@@ -75,9 +75,9 @@ class EmpleadoDetalleViewControler: UIViewController {
         
         let idUsuariRest = UsuarioService().obtenerUltimoID() - 1
         
-        let usuarioRest = UsuarioService().obtenerUsuarioPorId(id: Int16(idUsuariRest))
+       
         
-        var usuarioDTOREST = UsuarioDTOREST(id: Int(usuarioRest!.id), correo: usuarioRest!.correo!, contrasena: "")
+        var usuarioDTOREST = UsuarioDTOREST(id: idUsuariRest, correo: correo, contrasena: "")
         
         usuarioDTO.contrasena = usuarioDTO.generarContraseña(apellido: apellido)
         
