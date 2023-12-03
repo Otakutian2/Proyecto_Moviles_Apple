@@ -128,15 +128,21 @@ class PlatoActualizarViewController: UIViewController {
     @IBAction func btnEliminar(_ sender: Any) {
         let ventana = UIAlertController(title: "Sistema", message: "¿Seguro de eliminar?", preferredStyle: .alert)
         let botonAceptar = UIAlertAction(title: "Sí", style: .default, handler: { acccion in
+            if(self.plato.fk_plato_detalle?.count == 0){
+                let id = Int(self.plato.id)
+                
+                PlatoService().eliminarPlato(plato: self.plato)
+                PlatoServiceRest().eliminarPlatoRest(id: id)
+                NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
+                Toast(text: "Plato eliminado").show()
+                //VOLVER A LA PESTAÑA ANTERIOR
+                self.navigationController?.popViewController(animated: true)
+                
+            }else{
+                Toast(text: "No se puede eliminar el plato porque está registrado en comandas").show()
+
+            }
             
-            let id = Int(self.plato.id)
-            
-            PlatoService().eliminarPlato(plato: self.plato)
-            PlatoServiceRest().eliminarPlatoRest(id: id)
-            NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
-            Toast(text: "Plato eliminado").show()
-            //VOLVER A LA PESTAÑA ANTERIOR
-            self.navigationController?.popViewController(animated: true)
             
             
         })
