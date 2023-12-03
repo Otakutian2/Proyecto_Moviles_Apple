@@ -66,4 +66,15 @@ class MesaListadoViewController: UIViewController, UITableViewDataSource, UITabl
         performSegue(withIdentifier: "editar_mesa", sender: indexPath)
     }
 
+       func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                    if editingStyle == .delete {
+                        MesaService().eliminarMesa(mesa: listaMesas[indexPath.row])
+                        MesaServiceRest().eliminarMesaRest(id: Int(listaMesas[indexPath.row].id))
+                        cargarLista()
+                    }
+                }
+
+            func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+                    return.delete
+           }
 }
