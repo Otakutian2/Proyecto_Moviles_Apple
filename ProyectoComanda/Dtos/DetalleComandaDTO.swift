@@ -15,8 +15,8 @@ struct DetalleComandaDTO {
     var obsevacion:String
     
     var plato:Plato
-    var comanda:Comanda
-    
+    var comanda:Comanda?
+
     
 }
 

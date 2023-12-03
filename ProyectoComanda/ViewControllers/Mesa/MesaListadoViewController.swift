@@ -20,7 +20,7 @@ class MesaListadoViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         listaMesas = MesaService().listadoMesa()
         if listaMesas.count == 0 {
-            lblDatos.isHidden = false
+            lblDatos.isHidden = false	
         }else {
             lblDatos.isHidden = true
         }

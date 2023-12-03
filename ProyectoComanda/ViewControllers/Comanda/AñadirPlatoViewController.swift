@@ -25,7 +25,7 @@ class An_adirPlatoViewController: UIViewController {
     var comboPlato = DropDown()
     
     var preciotoal : Double = 0.0
-    
+    var idUltimaComanda: Int16!
     var detalleComanda : DetalleComanda?
    
     override func viewDidLoad() {
@@ -86,49 +86,52 @@ class An_adirPlatoViewController: UIViewController {
         }
     }
     @IBAction func btnAgregarPlato(_ sender: UIButton) {
-        
-        
         let cantidadPedido = Int(txtCantidad.text ?? "")
-        let observacion = txtObservacion.text!
+                let observacion = txtObservacion.text!
 
-        // Verificar si el plato ya está en la lista
-        if let platoSeleccionado = PlatoService().obtenerPlato(nombre: idPlato),
-            SessionManagerDetalle.shared.detallesComandaTemporales.first(where: { $0.plato.id == platoSeleccionado.id }) != nil {
-            // El plato ya está en la lista
-            let mensaje = "El plato ya se encuentra registrado, edite la cantidad"
-            Toast(text: mensaje).show()
-        } else {
-            // Obtén el próximo ID para la comanda
-            let nuevoIDComanda = ComandaService().obtenerUltimoID() - 1
-            print( "Nuevo Id---------------",nuevoIDComanda)
+                // Verificar si el plato ya está en la lista
+                if let platoSeleccionado = PlatoService().obtenerPlato(nombre: idPlato),
+                    SessionManagerDetalle.shared.detallesComandaTemporales.first(where: { $0.plato.id == platoSeleccionado.id }) != nil {
+                    // El plato ya está en la lista
+                    let mensaje = "El plato ya se encuentra registrado, edite la cantidad"
+                    Toast(text: mensaje).show()
+                } else {
+                    
+                    // Crea la comanda con el próximo ID
+                    let comanda = ComandaService().obtenerComandaPorId(id: Int16(idUltimaComanda))
+                    print("Obtengo id de la comnada----------",comanda)
 
-            // Crea la comanda con el próximo ID
-            let comanda = ComandaService().obtenerComandaPorId(id: Int16(nuevoIDComanda))
-            print("Obtengo id de la comnada----------",comanda)
+                    // El plato no está en la lista, se puede agregar
+                    if let platoSeleccionado = PlatoService().obtenerPlato(nombre: idPlato) {
+                        let idDetalle = DetaleComandaService().obtenerUltimoID()
+                        var nuevoDetalleTemporal = DetalleComandaDTO(
+                            id: idDetalle,
+                            cantidadPedido: cantidadPedido!,
+                            precioUnitario: platoSeleccionado.precioPlato,
+                            obsevacion: observacion,
+                            plato: platoSeleccionado,
+                            comanda: nil
+                        )
 
-            // El plato no está en la lista, se puede agregar
-            if let platoSeleccionado = PlatoService().obtenerPlato(nombre: idPlato) {
-                let idDetalle = DetaleComandaService().obtenerUltimoID()
-                let nuevoDetalleTemporal = DetalleComandaDTO(
-                    id: idDetalle,
-                    cantidadPedido: cantidadPedido!,
-                    precioUnitario: platoSeleccionado.precioPlato,
-                    obsevacion: observacion,
-                    plato: platoSeleccionado,
-                    comanda: comanda!
-                )
+                        // Agregas el detalle a la sesión temporal
+                        SessionManagerDetalle.shared.agregarDetalleComandaTemporal(detalle: nuevoDetalleTemporal)
+                        NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
 
-                SessionManagerDetalle.shared.agregarDetalleComandaTemporal(detalle: nuevoDetalleTemporal)
-                NotificationCenter.default.post(name: Notification.Name("load"), object: nil)
+                        // Obtén la comanda válida
+                        if let comanda = ComandaService().obtenerComandaPorId(id: Int16(idUltimaComanda)) {
+                            nuevoDetalleTemporal.comanda = comanda
+                        }
 
-                // Volvemos a la pestaña anterior solo si no hay plato duplicado
-                dismiss(animated: true, completion: nil)
-            } else {
-                // Manejar el caso en el que no se puede obtener el plato seleccionado
-                let mensaje = "Error al obtener el plato seleccionado"
-                Toast(text: mensaje).show()
-            }
-        }
+                        // Volvemos a la pestaña anterior solo si no hay plato duplicado
+                        dismiss(animated: true, completion: nil)
+                    } else {
+                        // Manejar el caso en el que no se puede obtener el plato seleccionado
+                        let mensaje = "Error al obtener el plato seleccionado"
+                        Toast(text: mensaje).show()
+                    }
+
+
+                }
     }
     
 

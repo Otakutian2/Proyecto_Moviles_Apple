@@ -140,7 +140,18 @@ class RegistrarComandaViewController: UIViewController, UITableViewDataSource, U
     
     
     @IBAction func btnagregarPlato(_ sender: Any) {
-        
+        performSegue(withIdentifier: "detalleComanda", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "detalleComanda" {
+                if let pantalla2 = segue.destination as? An_adirPlatoViewController {
+                    let comandaId = ComandaService().obtenerUltimoID()
+                    print(comandaId)
+                    pantalla2.idUltimaComanda = Int16(comandaId)
+                    
+            }
+        }
+            
     }
     
     @IBAction func btnGenerarComanda(_ sender: Any) {
