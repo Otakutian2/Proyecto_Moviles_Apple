@@ -184,21 +184,26 @@ class EditarComandaViewController: UIViewController, UITableViewDataSource, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "cambiarPlato") {
-            let pantalla = segue.destination as! CambiarDetallePlatoViewController
-            let indexPath = sender as! IndexPath
-            // colocar aquí la variable de la vista actualizar
-            pantalla.detalleComanda = listadoDetalleporComanda[indexPath.row]
-          
-        }else if segue.identifier == "facturar" {
-            if let pantalla2 = segue.destination as? FacturarComandaViewController {
-                let ComandaporId = ComandaService().obtenerComandaPorId(id: idComanda)
-                
-                pantalla2.comanda = ComandaporId
-                
-                
-               
-            }
-        }
+                    let pantalla = segue.destination as! CambiarDetallePlatoViewController
+                    let indexPath = sender as! IndexPath
+                    // colocar aquí la variable de la vista actualizar
+                    pantalla.detalleComanda = listadoDetalleporComanda[indexPath.row]
+                  
+                }
+                if segue.identifier == "facturar" {
+                    if let pantalla2 = segue.destination as? FacturarComandaViewController {
+                        let ComandaporId = ComandaService().obtenerComandaPorId(id: idComanda)
+                        
+                        pantalla2.comanda = ComandaporId
+                        
+                    }
+                }
+                if segue.identifier == "actualizar_plato" {
+                    if let pantalla2 = segue.destination as? An_adirPlatoViewController {
+                        pantalla2.idUltimaComanda = Int16(idComanda)
+                        
+                    }
+                }
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
